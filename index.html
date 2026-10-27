@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VISIONA: Sistem Skrining Kesehatan Mata</title>
+  <meta name="description" content="VISIONA adalah aplikasi desktop mandiri untuk membantu masyarakat mengevaluasi fungsi penglihatan secara terstruktur melalui rangkaian pemeriksaan digital komprehensif.">
+
+  <!-- Favicon Assets -->
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter for High-End Editorial Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Base Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Tirtus-Inspired Refined Editorial Design System for VISIONA -->
+  <style>
+    :root {
+      /* VISIONA Dashboard Authentic Purple Identity */
+      --color-primary: #5548e8;
+      --color-primary-hover: #4639d4;
+      --color-primary-active: #3b2fc4;
+      --color-primary-subtle: #f3f1ff;
+      --color-primary-border: #dcd7fe;
+      --color-primary-glow: rgba(85, 72, 232, 0.14);
+
+      /* Tirtus-Inspired Palette: Dominant Crisp White & Deep Dark Accents */
+      --color-bg-body: #ffffff;
+      --color-bg-soft: #fafbfc;
+      --color-bg-surface: #f4f5f8;
+      --color-dark-obsidian: #0b0c1e;
+      --color-dark-card: #111226;
+      --color-dark-surface: #181735;
+
+      /* High-Contrast Editorial Typography Colors */
+      --color-text-main: #0b0c1e;
+      --color-text-body: #475569;
+      --color-text-muted: #828da0;
+      --color-text-faded: #94a3b8;
+      --color-border-subtle: #eaecf0;
+      --color-border-clean: #e2e8f0;
+
+      /* Tirtus Large Rounded Radii */
+      --radius-grand-card: 40px;
+      --radius-window: 32px;
+      --radius-inner-card: 26px;
+      --radius-pill: 9999px;
+      --radius-icon: 16px;
+
+      /* Refined Diffuse Shadows */
+      --shadow-ambient: 0 25px 50px -15px rgba(11, 12, 30, 0.05);
+      --shadow-grand-window: 0 45px 100px -20px rgba(22, 20, 46, 0.15), 0 20px 45px -15px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.06);
+      --shadow-card-hover: 0 30px 60px -15px rgba(85, 72, 232, 0.09), 0 0 0 1px var(--color-primary-border);
+
+      /* Typography */
+      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* Reset & Base Setup */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Super Smooth Scrolling Setup */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text-body);
+      background-color: var(--color-bg-body);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    /* ========================================================================
+       1. NAVBAR (Ultra-Minimalist Tirtus Style)
+       ======================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-border-subtle);
+      transition: all 0.25s ease;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--color-text-main);
+    }
+
+    .nav-brand-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: var(--color-text-main);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--color-text-body);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--color-primary);
+    }
+
+    .btn-pill {
+      border-radius: var(--radius-pill);
+      padding: 0.7rem 1.45rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-pill-primary {
+      background-color: var(--color-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(85, 72, 232, 0.22);
+    }
+
+    .btn-pill-primary:hover {
+      background-color: var(--color-primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(85, 72, 232, 0.32);
+      color: #ffffff;
+    }
+
+    .btn-pill-secondary {
+      background-color: #ffffff;
+      color: var(--color-text-main);
+      border: 1px solid var(--color-border-clean);
+    }
+
+    .btn-pill-secondary:hover {
+      background-color: var(--color-bg-soft);
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+      color: var(--color-primary);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--color-text-main);
+    }
+
+    /* ========================================================================
+       2. ASYMMETRICAL EDITORIAL HERO (Tirtus High-Impact Composition)
+       ======================================================================== */
+    .hero-editorial-section {
+      padding-top: 5rem;
+      padding-bottom: 6rem;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Asymmetric 2-Column Editorial Grid: Huge Headline Left, Offset Narrative Right */
+    .hero-editorial-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4.5rem;
+      align-items: end;
+      margin-bottom: 4.5rem;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: 3.85rem;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: var(--color-text-main);
+      margin: 0;
+    }
+
+    .hero-headline .text-purple {
+      color: var(--color-primary);
+    }
+
+    .hero-editorial-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--color-text-body);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .hero-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-actions-row .btn-pill {
+      padding: 0.95rem 1.95rem;
+      font-size: 1rem;
+    }
+
+    .hero-disclaimer-note {
+      display: flex;
+      align-items: flex-start;
+      text-align: left;
+      gap: 0.55rem;
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+      max-width: 520px;
+    }
+
+    .hero-disclaimer-note svg {
+      flex-shrink: 0;
+      color: var(--color-primary);
+      margin-top: 2px;
+    }
+
+    /* Grand Visual Canvas: Authentic VISIONA Desktop Dashboard (Tirtus Big Visual Style) */
+    .hero-grand-canvas {
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .desktop-grand-window {
+      background: #ffffff;
+      border-radius: var(--radius-window);
+      box-shadow: var(--shadow-grand-window);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .desktop-grand-window:hover {
+      transform: translateY(-2px);
+    }
+
+    .window-titlebar {
+      height: 48px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--color-border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+    }
+
+    .window-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .window-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background-color: #ff5f56; }
+    .dot-yellow { background-color: #ffbd2e; }
+    .dot-green { background-color: #27c93f; }
+
+    .window-title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    .window-body {
+      background: #ffffff;
+      line-height: 0;
+      display: block;
+    }
+
+    .window-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ========================================================================
+       3. EDITORIAL MANIFESTO SECTION (Inspired by Tirtus Section 3)
+       ======================================================================== */
+    .manifesto-section {
+      padding: 6.5rem 0 6rem;
+      background-color: var(--color-bg-body);
+      border-top: 1px solid var(--color-border-subtle);
+    }
+
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+      margin-bottom: 4.5rem;
+    }
+
+    .manifesto-kicker {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .manifesto-body {
+      font-size: 1.45rem;
+      line-height: 1.6;
+      color: var(--color-text-main);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .manifesto-body .text-faded {
+      color: var(--color-text-muted);
+      font-weight: 400;
+    }
+
+    /* 3-Column Editorial Pillars (No chunky boxes, clean thin dividers) */
+    .editorial-pillars-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      border-top: 1px solid var(--color-border-subtle);
+      padding-top: 3.5rem;
+    }
+
+    .pillar-col-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .pillar-col-item h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.015em;
+    }
+
+    .pillar-col-item p {
+      font-size: 0.95rem;
+      color: var(--color-text-body);
+      line-height: 1.65;
+    }
+
+    /* ========================================================================
+       4. GRAND DARK STATEMENT CARD (Tirtus Massive Statement Block)
+          Pure Focus on Kuesioner Gejala dan Tanda Bahaya
+       ======================================================================== */
+    .showcase-section {
+      padding: 6.5rem 0 7rem;
+      background-color: var(--color-bg-soft);
+      border-top: 1px solid var(--color-border-subtle);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .grand-dark-card {
+      background: linear-gradient(150deg, var(--color-dark-obsidian) 0%, #151430 100%);
+      border-radius: var(--radius-grand-card);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: 0 40px 90px -20px rgba(11, 12, 30, 0.35);
+      padding: 4.5rem;
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ambient soft purple glow in the dark card corner */
+    .grand-dark-card::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(85, 72, 232, 0.28) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    /* Kuesioner Gejala dan Tanda Bahaya (Seamlessly Proportioned) */
+    .dark-card-kuesioner {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .kuesioner-intro-col h3 {
+      font-family: var(--font-display);
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      color: #ffffff;
+      margin-bottom: 1.15rem;
+    }
+
+    .kuesioner-intro-col p {
+      font-size: 1.0625rem;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.7;
+    }
+
+    .kuesioner-points-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    .kuesioner-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 1.025rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+    }
+
+    .kuesioner-point-item svg {
+      flex-shrink: 0;
+      color: #8b7dfa;
+      margin-top: 4px;
+    }
+
+    /* ========================================================================
+       5. CARA KERJA (Editorial Sequence)
+       ======================================================================== */
+    .steps-section {
+      padding: 7rem 0;
+      background-color: var(--color-bg-body);
+    }
+
+    .section-editorial-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+
+    .section-editorial-header h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+    }
+
+    .section-editorial-header p {
+      font-size: 1.1rem;
+      color: var(--color-text-body);
+      line-height: 1.7;
+    }
+
+    .steps-grid-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+    }
+
+    .step-item-card {
+      padding-top: 1.75rem;
+      border-top: 2px solid var(--color-border-clean);
+      transition: border-color 0.25s ease;
+    }
+
+    .step-item-card:hover {
+      border-color: var(--color-primary);
+    }
+
+    .step-num-display {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 1.15rem;
+      letter-spacing: -0.04em;
+    }
+
+    .step-item-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.015em;
+    }
+
+    .step-item-card p {
+      font-size: 0.9375rem;
+      color: var(--color-text-body);
+      line-height: 1.6;
+    }
+
+    /* ========================================================================
+       6. PRIVACY SECTION (Clean Editorial Block, No Icons in List)
+       ======================================================================== */
+    .privacy-section {
+      padding: 7rem 0;
+      background-color: var(--color-bg-soft);
+      border-top: 1px solid var(--color-border-subtle);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .privacy-editorial-card {
+      background: #ffffff;
+      border-radius: var(--radius-grand-card);
+      border: 1px solid var(--color-border-subtle);
+      box-shadow: var(--shadow-ambient);
+      padding: 4.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .privacy-col-narrative h2 {
+      font-family: var(--font-display);
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+      letter-spacing: -0.035em;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .privacy-col-narrative p {
+      font-size: 1.1rem;
+      color: var(--color-text-body);
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+    }
+
+    .privacy-action-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .privacy-points-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .privacy-stack-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .privacy-stack-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .privacy-text-content h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.015em;
+    }
+
+    .privacy-text-content p {
+      font-size: 0.95rem;
+      color: var(--color-text-body);
+      line-height: 1.6;
+    }
+
+    /* ========================================================================
+       7. UNDUH DESKTOP (Clean OS Cards)
+       ======================================================================== */
+    .download-section {
+      padding: 7rem 0 7.5rem;
+      background-color: var(--color-bg-body);
+    }
+
+    .download-cards-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .download-platform-card {
+      background: var(--color-bg-soft);
+      border-radius: var(--radius-grand-card);
+      border: 1px solid var(--color-border-subtle);
+      padding: 3.5rem 3rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .download-platform-card:hover {
+      border-color: var(--color-primary-border);
+      background: #ffffff;
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .platform-icon-wrap {
+      width: 68px;
+      height: 68px;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid var(--color-border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-main);
+      margin-bottom: 1.5rem;
+    }
+
+    .download-platform-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .platform-arch-tag {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 1.15rem;
+    }
+
+    .download-platform-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-body);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+      max-width: 340px;
+    }
+
+    .download-action-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+      max-width: 290px;
+      margin-top: auto;
+    }
+
+    .download-action-group .btn-pill {
+      width: 100%;
+      justify-content: center;
+      padding: 0.85rem 1.4rem;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn-pill:focus-visible,
+    .download-action-btn:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+    }
+
+    .btn-pill-disabled {
+      background: var(--color-border-subtle);
+      color: var(--color-text-muted);
+      border: 1px solid transparent;
+      cursor: not-allowed;
+      padding: 0.8rem 1.65rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .btn-pill-status {
+      background: #f1f3f7;
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border-clean);
+      cursor: default;
+      padding: 0.85rem 1.4rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      user-select: none;
+    }
+
+    .platform-status-subtext {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+      text-align: center;
+      display: block;
+      margin-top: 0.35rem;
+    }
+
+    /* Download Information Modal */
+    .download-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(11, 12, 30, 0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      padding: 1.5rem;
+    }
+
+    .download-modal-overlay.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .download-modal-card {
+      background: #ffffff;
+      border-radius: var(--radius-inner-card);
+      max-width: 460px;
+      width: 100%;
+      padding: 2.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-grand-window);
+      border: 1px solid var(--color-border-clean);
+      transform: translateY(14px);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .download-modal-overlay.is-active .download-modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-badge-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: var(--color-primary-subtle);
+      color: var(--color-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .modal-card-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.025em;
+    }
+
+    .modal-filename-tag {
+      font-family: monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      background: var(--color-primary-subtle);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 8px;
+      padding: 0.3rem 0.75rem;
+      display: inline-block;
+      margin-bottom: 1.15rem;
+    }
+
+    .modal-status-grid {
+      background: var(--color-bg-soft);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: 12px;
+      padding: 0.85rem 1.15rem;
+      margin-bottom: 1.15rem;
+      text-align: left;
+      font-size: 0.8125rem;
+    }
+
+    .modal-status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.3rem 0;
+    }
+
+    .modal-status-row:not(:last-child) {
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .modal-status-label {
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    .modal-status-val {
+      font-weight: 600;
+    }
+
+    .modal-status-val.text-success {
+      color: #059669;
+    }
+
+    .modal-status-val.text-pending {
+      color: #d97706;
+    }
+
+    .modal-status-val.text-muted {
+      color: var(--color-text-muted);
+    }
+
+    .modal-card-desc {
+      font-size: 0.925rem;
+      color: var(--color-text-body);
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+    }
+
+    .download-notice-editorial {
+      text-align: center;
+      max-width: 760px;
+      margin: 3rem auto 0;
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+
+    /* ========================================================================
+       8. FOOTER (Minimalist Editorial)
+       ======================================================================== */
+    .site-footer {
+      background-color: var(--color-bg-soft);
+      border-top: 1px solid var(--color-border-subtle);
+      padding: 5.5rem 0 3.5rem;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: var(--color-text-main);
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .footer-desc-text {
+      font-size: 0.95rem;
+      color: var(--color-text-body);
+      line-height: 1.7;
+      max-width: 360px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.35rem;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .footer-links-list a {
+      font-size: 0.9375rem;
+      color: var(--color-text-body);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links-list a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-bottom-row {
+      padding-top: 2.25rem;
+      border-top: 1px solid var(--color-border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      flex-wrap: wrap;
+    }
+
+    /* ========================================================================
+       9. ANIMATIONS & ACCESSIBILITY
+       ======================================================================== */
+    @keyframes editorialFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-editorial-grid {
+      animation: editorialFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-grand-canvas {
+      animation: editorialFadeUp 0.75s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* ========================================================================
+       C.2 VIDEO EXPERIENCE SECTION (Pure Minimalist Showcase, Zero Controls)
+       ======================================================================== */
+    .media-editorial-section {
+      padding: 6rem 0;
+      background-color: var(--color-bg-soft);
+      border-top: 1px solid var(--color-border-subtle);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .media-editorial-header {
+      max-width: 820px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .media-editorial-title {
+      font-family: var(--font-display);
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      color: var(--color-text-main);
+      margin-bottom: 1.25rem;
+    }
+
+    .media-editorial-lead {
+      font-size: 1.125rem;
+      color: var(--color-text-body);
+      line-height: 1.7;
+    }
+
+    .visiona-video-card {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: #0b0c1e;
+      border-radius: var(--radius-inner-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-grand-window);
+      border: 1px solid var(--color-border-clean);
+      margin-bottom: 0;
+    }
+
+    .visiona-video-player {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+
+    .video-white-fade-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ffffff;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+      z-index: 5;
+    }
+
+    /* ========================================================================
+       F.2 LANDSCAPE SHOWCASE CARD (Editorial 2-Column Showcase)
+       ======================================================================== */
+    .landscape-showcase-card {
+      margin-top: 2.5rem;
+      background-color: #ffffff;
+      border: 1px solid var(--color-border-clean);
+      border-radius: var(--radius-grand-card);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      box-shadow: var(--shadow-ambient);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .landscape-showcase-card:hover {
+      box-shadow: 0 30px 60px -20px rgba(85, 72, 232, 0.09);
+    }
+
+    .landscape-image-col {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-inner-card);
+      overflow: hidden;
+      background-color: var(--color-dark-obsidian);
+      border: 1px solid var(--color-border-subtle);
+      box-shadow: 0 20px 40px -15px rgba(22, 20, 46, 0.12);
+    }
+
+    .landscape-showcase-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .landscape-showcase-card:hover .landscape-showcase-img {
+      transform: scale(1.02);
+    }
+
+    .landscape-caption-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .landscape-caption-title {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
+      color: var(--color-text-main);
+      margin-bottom: 1.25rem;
+    }
+
+    .landscape-caption-desc {
+      font-size: 1.0625rem;
+      color: var(--color-text-body);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .landscape-caption-subtext {
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      border-left: 2px solid var(--color-primary-border);
+      padding-left: 1rem;
+    }
+
+    /* Progressive Scroll Reveal System */
+    html.js-reveal-ready .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    html.js-reveal-ready .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto !important;
+      }
+      html.js-reveal-ready .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ========================================================================
+       10. RESPONSIVENESS (Flawless on Desktop, Tablet, & Mobile)
+       ======================================================================== */
+    @media (max-width: 1100px) {
+      .hero-headline {
+        font-size: 3.25rem;
+      }
+      .hero-editorial-grid {
+        gap: 3rem;
+      }
+      .manifesto-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .grand-dark-card {
+        padding: 3.5rem;
+      }
+      .dark-card-kuesioner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .steps-grid-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .privacy-editorial-card {
+        grid-template-columns: 1fr;
+        padding: 3rem;
+        gap: 3rem;
+      }
+      .landscape-showcase-card {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+        padding: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+      .navbar {
+        height: 64px;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .nav-actions {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .hero-editorial-section {
+        padding-top: 3rem;
+        padding-bottom: 4.5rem;
+      }
+      .hero-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+      }
+      .hero-headline {
+        font-size: 2.35rem;
+        line-height: 1.15;
+      }
+      .hero-desc {
+        font-size: 1.05rem;
+        margin-bottom: 1.75rem;
+      }
+      .hero-actions-row {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-actions-row .btn-pill {
+        width: 100%;
+        justify-content: center;
+      }
+      .desktop-grand-window {
+        border-radius: 20px;
+      }
+      .window-titlebar {
+        height: 38px;
+        padding: 0 1rem;
+      }
+      .window-title {
+        display: none;
+      }
+      .editorial-pillars-row {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .section-editorial-header {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .grand-dark-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 28px;
+      }
+      .kuesioner-intro-col h3 {
+        font-size: 1.85rem;
+      }
+      .steps-grid-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .download-cards-row {
+        grid-template-columns: 1fr;
+      }
+      .media-editorial-section {
+        padding: 3.5rem 0;
+      }
+      .media-editorial-title {
+        font-size: 1.65rem;
+      }
+      .media-editorial-lead {
+        font-size: 0.975rem;
+      }
+      .landscape-showcase-card {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        border-radius: 22px;
+        gap: 1.5rem;
+        margin-top: 1.75rem;
+      }
+      .landscape-image-col {
+        border-radius: 16px;
+      }
+      .landscape-caption-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+      }
+      .landscape-caption-desc {
+        font-size: 0.9375rem;
+        line-height: 1.65;
+        margin-bottom: 1rem;
+      }
+      .landscape-caption-subtext {
+        font-size: 0.85rem;
+      }
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       A. NAVBAR (Minimalist Tirtus Style)
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="nav-brand" aria-label="VISIONA Beranda">
+        <img src="assets/images/visiona-logo-dark.png" alt="VISIONA Logo" class="nav-brand-logo">
+        <span class="brand-title">VISIONA</span>
+      </a>
+
+      <!-- Navigation Links with Super Smooth Scroll Target Anchors -->
+      <nav id="nav-menu" class="nav-menu" aria-label="Navigasi Utama">
+        <a href="#beranda" class="nav-link">Beranda</a>
+        <a href="#tentang" class="nav-link">Tentang</a>
+        <a href="#pengalaman" class="nav-link">Pengalaman</a>
+        <a href="#fitur" class="nav-link">Fitur</a>
+        <a href="#cara-kerja" class="nav-link">Cara Kerja</a>
+        <a href="#privasi" class="nav-link">Privasi</a>
+        <a href="#unduh" class="nav-link">Unduh</a>
+      </nav>
+
+      <!-- Desktop Action CTA -->
+      <div class="nav-actions">
+        <a href="#unduh" class="btn-pill btn-pill-primary">
+          <span>Download VISIONA</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Buka Menu Navigasi" aria-expanded="false" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         B. HERO SECTION (Asymmetrical Editorial Tirtus Composition)
+         ====================================================================== -->
+    <section id="beranda" class="hero-editorial-section">
+      <div class="container">
+        <!-- Asymmetrical Editorial Grid: Huge Headline Left, Offset Narrative Right -->
+        <div class="hero-editorial-grid">
+          <div class="hero-editorial-main">
+            <h1 class="hero-headline">
+              Kenali Kondisi<br>
+              Penglihatan Anda<br>
+              dengan <span class="text-purple">Lebih Terarah.</span>
+            </h1>
+          </div>
+
+          <div class="hero-editorial-aside">
+            <p class="hero-desc">
+              VISIONA adalah aplikasi desktop mandiri untuk membantu masyarakat mengevaluasi fungsi penglihatan secara terstruktur melalui rangkaian pemeriksaan digital komprehensif.
+            </p>
+
+            <div class="hero-actions-row">
+              <a href="#unduh" class="btn-pill btn-pill-primary">
+                <span>Download VISIONA</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              </a>
+              <a href="#fitur" class="btn-pill btn-pill-secondary">
+                <span>Jelajahi Fitur</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </a>
+            </div>
+
+            <!-- Left-aligned note under buttons -->
+            <div class="hero-disclaimer-note">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span>Skrining mandiri untuk membantu memahami fungsi penglihatan. Bukan alat diagnosis medis.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grand Visual Canvas: Authentic VISIONA Desktop Dashboard (Tirtus Big Visual) -->
+        <div class="hero-grand-canvas">
+          <div class="desktop-grand-window">
+            <div class="window-titlebar">
+              <div class="window-controls" aria-hidden="true">
+                <span class="window-dot dot-red"></span>
+                <span class="window-dot dot-yellow"></span>
+                <span class="window-dot dot-green"></span>
+              </div>
+              <div class="window-title">VISIONA Desktop Dashboard</div>
+              <div style="width: 48px;" aria-hidden="true"></div>
+            </div>
+            <div class="window-body">
+              <img src="assets/images/app-dashboard-main.png" alt="Dashboard Utama Aplikasi VISIONA" class="window-img" loading="eager">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         C. EDITORIAL MANIFESTO SECTION (Inspired by Tirtus Section 3)
+         ====================================================================== -->
+    <section id="tentang" class="manifesto-section">
+      <div class="container">
+        <div class="manifesto-grid reveal-on-scroll">
+          <div class="manifesto-kicker">
+            Solusi Digital Terpadu untuk Pemantauan Penglihatan Mandiri
+          </div>
+
+          <div class="manifesto-body">
+            VISIONA dikembangkan untuk memberikan akses skrining fungsional penglihatan yang terstandar, mudah dipahami, dan dapat dilakukan secara mandiri di rumah atau tempat kerja.
+            <span class="text-faded">Melalui kombinasi evaluasi gejala terstruktur, uji ketajaman optotipe, persepsi warna, diskriminasi kontras, lapang pandang perifer, dan grid Amsler, pengguna dapat mengenali perubahan fungsi mata lebih dini sebelum berkonsultasi ke dokter spesialis mata.</span>
+          </div>
+        </div>
+
+        <!-- 3 Minimalist Editorial Pillars -->
+        <div class="editorial-pillars-row reveal-on-scroll">
+          <div class="pillar-col-item">
+            <h3>Protokol Skrining Fungsional</h3>
+            <p>Mengadopsi prinsip optometri terstandar seperti optotipe terukur, dial meridian astigmatisme, dan grid evaluasi makula.</p>
+          </div>
+
+          <div class="pillar-col-item">
+            <h3>Riwayat dan Pemantauan Skrining</h3>
+            <p>Simpan dan tinjau riwayat skrining penglihatan Anda, serta pantau hasil pemeriksaan mandiri dari waktu ke waktu melalui dashboard VISIONA.</p>
+          </div>
+
+          <div class="pillar-col-item">
+            <h3>Transparansi dan Batasan Medis</h3>
+            <p>Menekankan edukasi dan deteksi awal. Aplikasi tidak menggantikan pemeriksaan komprehensif dokter spesialis mata (Sp.M).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         C.2 VIDEO & MEDIA EXPERIENCE SECTION (Editorial Showcase)
+         ====================================================================== -->
+    <section id="pengalaman" class="media-editorial-section">
+      <div class="container">
+        <div class="media-editorial-header">
+          <h2 class="media-editorial-title">VISIONA A Clearer View of Your Visual Health</h2>
+          <p class="media-editorial-lead">
+            Kenali pengalaman skrining penglihatan mandiri melalui VISIONA. Jelajahi fitur pemeriksaan, tinjau hasil, dan pantau riwayat skrining dalam satu aplikasi yang dirancang sederhana dan mudah digunakan.
+          </p>
+        </div>
+
+        <!-- Grand Video Player Canvas (Pure & Uncluttered, No Controls) -->
+        <div class="visiona-video-card reveal-on-scroll">
+          <video
+            id="visiona-feature-video"
+            class="visiona-video-player"
+            src="assets/video/intro-visiona.mp4"
+            muted
+            playsinline
+            autoplay
+            preload="metadata"
+            aria-label="Video Pengenalan Pengalaman Aplikasi VISIONA"
+          ></video>
+
+          <!-- Smooth Fade-to-White Layer -->
+          <div id="video-white-fade-overlay" class="video-white-fade-overlay" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         D. GRAND DARK STATEMENT CARD (Tirtus Massive Statement Block)
+         Kuesioner Gejala dan Tanda Bahaya Showcase
+         ====================================================================== -->
+    <section id="fitur" class="showcase-section">
+      <div class="container">
+        <article class="grand-dark-card reveal-on-scroll">
+          <div class="dark-card-kuesioner">
+            <div class="kuesioner-intro-col">
+              <h3>Kuesioner Gejala dan Tanda Bahaya</h3>
+              <p>
+                Evaluasi terstruktur untuk meninjau gejala penglihatan yang Anda rasakan. Mengidentifikasi tanda bahaya yang memerlukan pemeriksaan spesialis mata segera.
+              </p>
+            </div>
+
+            <div class="kuesioner-points-col">
+              <div class="kuesioner-point-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Penapisan gejala penurunan tajam penglihatan mendadak vs bertahap</span>
+              </div>
+              <div class="kuesioner-point-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Deteksi tanda bahaya seperti nyeri hebat, kilatan cahaya, atau bayangan tirai</span>
+              </div>
+              <div class="kuesioner-point-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Panduan keselamatan medis langsung sesuai tingkat urgensi klinis</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         E. CARA KERJA (Editorial Sequence)
+         ====================================================================== -->
+    <section id="cara-kerja" class="steps-section">
+      <div class="container">
+        <div class="section-editorial-header">
+          <h2>Mulai dengan Langkah Sederhana</h2>
+          <p>
+            Alur penggunaan aplikasi desktop dirancang agar mudah diikuti oleh siapa pun dalam kenyamanan ruangan Anda.
+          </p>
+        </div>
+
+        <div class="steps-grid-row reveal-on-scroll">
+          <div class="step-item-card">
+            <div class="step-num-display">01</div>
+            <h3>Instal VISIONA</h3>
+            <p>Unduh paket installer resmi sesuai sistem operasi desktop Anda (Windows atau macOS) ketika versi rilis sudah tersedia.</p>
+          </div>
+
+          <div class="step-item-card">
+            <div class="step-num-display">02</div>
+            <h3>Autentikasi Akun Lokal</h3>
+            <p>Gunakan username dan password untuk mengakses akun VISIONA Anda. Informasi akun dan riwayat skrining dikelola melalui sistem penyimpanan aplikasi.</p>
+          </div>
+
+          <div class="step-item-card">
+            <div class="step-num-display">03</div>
+            <h3>Lakukan Skrining</h3>
+            <p>Pilih pemeriksaan yang diinginkan, atur pencahayaan dan jarak layar sesuai instruksi, lalu selesaikan tes pada layar.</p>
+          </div>
+
+          <div class="step-item-card">
+            <div class="step-num-display">04</div>
+            <h3>Tinjau Hasil dan Riwayat</h3>
+            <p>Baca klasifikasi hasil skrining mandiri secara langsung dan pantau perkembangan riwayat pemeriksaan Anda melalui dashboard aplikasi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         F. PRIVASI DAN KEAMANAN (Clean Editorial Layout, Tanpa Simbol/Ikon)
+         ====================================================================== -->
+    <section id="privasi" class="privacy-section">
+      <div class="container">
+        <div class="privacy-editorial-card reveal-on-scroll">
+          <div class="privacy-col-narrative">
+            <h2>Privasi Anda Tetap Menjadi Prioritas</h2>
+            <p>
+              Kami percaya bahwa data kesehatan mandiri Anda harus dikelola dengan prinsip privasi dan transparansi yang ketat. VISIONA dirancang agar informasi Anda tetap terlindungi dan berada dalam kendali penuh Anda.
+            </p>
+            <div class="privacy-action-links">
+              <a href="privacy.html" class="btn-pill btn-pill-primary">
+                <span>Kebijakan Privasi</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="terms.html" class="btn-pill btn-pill-secondary">
+                <span>Syarat &amp; Ketentuan</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3 Information Items (Clean text layout, symbol/icon boxes removed) -->
+          <div class="privacy-points-stack">
+            <div class="privacy-stack-item">
+              <div class="privacy-text-content">
+                <h4>Autentikasi Akun Lokal</h4>
+                <p>Gunakan username dan password untuk mengakses akun VISIONA Anda. Informasi akun dan riwayat skrining dikelola melalui sistem penyimpanan aplikasi.</p>
+              </div>
+            </div>
+
+            <div class="privacy-stack-item">
+              <div class="privacy-text-content">
+                <h4>Bukan Rekam Medis Rumah Sakit</h4>
+                <p>Catatan skrining merupakan arsip pribadi untuk pemantauan mandiri, bukan rekam medis publik, dan tidak pernah dibagikan atau dijual ke pihak ketiga.</p>
+              </div>
+            </div>
+
+            <div class="privacy-stack-item">
+              <div class="privacy-text-content">
+                <h4>Hak Akses dan Pengelolaan Riwayat</h4>
+                <p>Pengguna memiliki kendali penuh untuk meninjau seluruh riwayat skrining mandiri serta mengelola data pemeriksaan di dalam akun aplikasi kapan saja.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Landscape Showcase Card with Companion Caption -->
+        <div class="landscape-showcase-card reveal-on-scroll">
+          <div class="landscape-image-col">
+            <img
+              src="assets/images/visiona-background.jpg"
+              alt="Visual Antarmuka dan Identitas Landscape VISIONA"
+              class="landscape-showcase-img"
+              loading="lazy"
+            >
+          </div>
+          <div class="landscape-caption-col">
+            <h3 class="landscape-caption-title">Kenali VISIONA Lebih Dekat</h3>
+            <p class="landscape-caption-desc">
+              VISIONA menghadirkan pengalaman skrining penglihatan mandiri melalui antarmuka yang sederhana, hasil pemeriksaan yang mudah ditinjau, dan riwayat yang membantu pengguna memantau perkembangan penglihatan dari waktu ke waktu.
+            </p>
+            <p class="landscape-caption-subtext">
+              Dirancang untuk membantu Anda lebih memahami hasil skrining mandiri.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         G. UNDUH DESKTOP (Clean OS Cards)
+         ====================================================================== -->
+    <section id="unduh" class="download-section">
+      <div class="container">
+        <div class="section-editorial-header" style="text-align: center; display: block; max-width: 760px; margin: 0 auto 3.5rem;">
+          <h2>Temukan VISIONA untuk Desktop Anda</h2>
+          <p style="margin-top: 0.75rem;">
+            Aplikasi desktop VISIONA dirancang untuk distribusi mandiri pada sistem operasi Windows dan macOS.
+          </p>
+        </div>
+
+        <div class="download-cards-row reveal-on-scroll">
+          <!-- Windows Card -->
+          <div class="download-platform-card">
+            <div class="platform-icon-wrap">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+            </div>
+            <h3>Windows</h3>
+            <div class="platform-arch-tag">Windows 10 / 11 (64-bit)</div>
+            <p>
+              Paket aplikasi mandiri untuk PC dan laptop berbasis Windows dengan dukungan tampilan layar beresolusi tinggi.
+            </p>
+            <div class="download-action-group">
+              <a href="https://github.com/Chaxyzzz/Visiona/releases/download/v1.0.0/VISIONA-Setup.exe" class="btn-pill btn-pill-primary download-action-btn" id="btn-download-setup" data-platform="winSetup" aria-label="Download VISIONA untuk Windows (Installer NSIS)" download>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Download VISIONA</span>
+              </a>
+              <a href="https://github.com/Chaxyzzz/Visiona/releases/download/v1.0.0/VISIONA-Portable.exe" class="btn-pill btn-pill-secondary download-action-btn" id="btn-download-portable" data-platform="winPortable" aria-label="Download VISIONA Portable untuk Windows" download>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span>Download VISIONA Portable</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- macOS Card -->
+          <div class="download-platform-card">
+            <div class="platform-icon-wrap">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 1.01-2.85-.9.04-1.99.6-2.61 1.34-.58.65-1.09 1.71-1.05 2.74 1 .08 2.03-.48 2.65-1.23z"/></svg>
+            </div>
+            <h3>macOS</h3>
+            <div class="platform-arch-tag">Intel &amp; Apple Silicon</div>
+            <p>
+              Aplikasi desktop mandiri untuk Mac dengan dukungan perangkat yang benar-benar kompatibel dan tampilan yang sesuai untuk layar Retina.
+            </p>
+            <div class="download-action-group">
+              <button type="button" class="btn-pill-status download-action-btn" id="btn-status-mac" data-platform="macDmg" aria-label="Status rilis macOS: Dalam Persiapan">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Dalam Persiapan</span>
+              </button>
+              <span class="platform-status-subtext">Paket instalasi Mac (.dmg) sedang dalam tahap persiapan dan belum tersedia untuk diunduh.</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="download-notice-editorial">
+          Catatan: Halaman ini merupakan situs resmi informasi dan distribusi aplikasi desktop VISIONA. Sistem operasi Linux tidak didukung. Paket biner Windows mandiri (installer dan portabel) telah dikompilasi secara lokal dan siap didistribusikan melalui rilis resmi.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       H. FOOTER (Minimalist Editorial)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="footer-brand-title">
+            <img src="assets/images/visiona-logo-dark.png" alt="VISIONA Logo" style="width: 24px; height: 24px; object-fit: contain;">
+            <span>VISIONA</span>
+          </div>
+          <p class="footer-desc-text">
+            Aplikasi desktop mandiri untuk skrining awal kesehatan mata dan edukasi penglihatan fungsional.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul class="footer-links-list">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang VISIONA</a></li>
+            <li><a href="#pengalaman">Pratinjau Aplikasi</a></li>
+            <li><a href="#fitur">Fitur Skrining</a></li>
+            <li><a href="#cara-kerja">Cara Kerja</a></li>
+            <li><a href="#unduh">Unduh Desktop</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hukum &amp; Privasi</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html">Kebijakan Privasi</a></li>
+            <li><a href="terms.html">Syarat &amp; Ketentuan</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>
+          &copy; <span id="current-year">2026</span> <strong>VISIONA</strong>. Seluruh hak cipta dilindungi undang-undang.
+        </div>
+        <div>
+          Skrining mandiri tidak menggantikan pemeriksaan profesional oleh dokter spesialis mata.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Local Script & Super Smooth Scroll Handler -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // VISIONA Dedicated Video Experience Controller with Dynamic Fade-to-White & Clean Loop
+    (function initVisionaVideoExperience() {
+      const video = document.getElementById('visiona-feature-video');
+      const overlay = document.getElementById('video-white-fade-overlay');
+
+      if (!video || !overlay) return;
+
+      // Strict requirement: Always muted, zero audio under all circumstances
+      video.muted = true;
+      video.volume = 0;
+      video.addEventListener('volumechange', function() {
+        video.muted = true;
+        video.volume = 0;
+      });
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      let videoDuration = 0;
+      const FADE_WINDOW_SEC = 1.5; // Starts fading 1.5s before video end
+      let isTransitioningLoop = false;
+
+      function getDuration() {
+        if (video.duration && !isNaN(video.duration) && isFinite(video.duration) && video.duration > 0) {
+          videoDuration = video.duration;
+        }
+        return videoDuration;
+      }
+
+      video.addEventListener('loadedmetadata', getDuration);
+      video.addEventListener('durationchange', getDuration);
+      video.addEventListener('canplay', getDuration);
+
+      function handleTimeUpdate() {
+        if (prefersReducedMotion || isTransitioningLoop) return;
+
+        const dur = getDuration();
+        if (!dur || dur <= 0) return;
+
+        const currentTime = video.currentTime;
+        const fadeStart = Math.max(0, dur - FADE_WINDOW_SEC);
+
+        if (currentTime >= fadeStart && dur > 0) {
+          // Progress scales smoothly from 0.0 to 1.0
+          const progress = Math.min(1, Math.max(0, (currentTime - fadeStart) / (dur - fadeStart)));
+          overlay.style.opacity = progress.toFixed(3);
+        } else {
+          overlay.style.opacity = '0';
+        }
+      }
+
+      video.addEventListener('timeupdate', handleTimeUpdate);
+
+      // Clean loop handling: white screen on end, hold for 1.2s, then loop cleanly
+      video.addEventListener('ended', function() {
+        if (!prefersReducedMotion) {
+          overlay.style.opacity = '1';
+        }
+        isTransitioningLoop = true;
+
+        setTimeout(function() {
+          video.currentTime = 0;
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.then(function() {
+              setTimeout(function() {
+                overlay.style.opacity = '0';
+                isTransitioningLoop = false;
+              }, 150);
+            }).catch(function() {
+              isTransitioningLoop = false;
+            });
+          } else {
+            overlay.style.opacity = '0';
+            isTransitioningLoop = false;
+          }
+        }, 1200);
+      });
+
+      video.addEventListener('play', function() {
+        video.muted = true;
+        video.volume = 0;
+        if (!isTransitioningLoop && video.currentTime < (getDuration() - FADE_WINDOW_SEC)) {
+          overlay.style.opacity = '0';
+        }
+      });
+
+      video.addEventListener('seeked', function() {
+        handleTimeUpdate();
+      });
+
+      // Autoplay handling in accordance with browser policies
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function() {
+          // Silent fallback if autoplay is restricted
+        });
+      }
+    })();
+  </script>
+  <script>
+    // Lightweight Elegant Scroll Reveal with IntersectionObserver (Single-trigger, zero scroll-polling)
+    (function initSmoothScrollReveal() {
+      if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      if (!revealElements.length) return;
+
+      // Mark document as ready for progressive enhancement
+      document.documentElement.classList.add('js-reveal-ready');
+
+      const observer = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            obs.unobserve(entry.target); // Unobserve so it triggers only once
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.12
+      });
+
+      revealElements.forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+  <script>
+    // Super Smooth Scroll Handling with Navbar Offset & Respect for Accessibility
+    (function() {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#' || !targetId) return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+
+            const navHeight = document.querySelector('.site-header')?.offsetHeight || 74;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - (navHeight + 20);
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
+
+            // Update URL hash without abrupt jumping
+            if (history.pushState) {
+              history.pushState(null, null, targetId);
+            }
+
+            // Close mobile menu if open
+            const navMenu = document.getElementById('nav-menu');
+            const mobileToggle = document.getElementById('mobile-menu-toggle');
+            if (navMenu && navMenu.classList.contains('is-active')) {
+              navMenu.classList.remove('is-active');
+              mobileToggle?.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- Download Information Modal (Zero External Dependencies) -->
+  <div id="download-modal" class="download-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="download-modal-card">
+      <div class="modal-badge-wrap" id="modal-badge-wrap">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <h3 id="modal-title" class="modal-card-title">Download VISIONA</h3>
+      <div id="modal-filename-tag" class="modal-filename-tag">VISIONA-Setup.exe</div>
+      <div class="modal-status-grid" id="modal-status-grid">
+        <div class="modal-status-row">
+          <span class="modal-status-label">Berkas Biner Lokal:</span>
+          <span class="modal-status-val text-success" id="modal-local-status">Tersedia (93,3 MB)</span>
+        </div>
+        <div class="modal-status-row">
+          <span class="modal-status-label">Tautan Publik Online:</span>
+          <span class="modal-status-val text-pending" id="modal-online-status">Menunggu Publikasi GitHub</span>
+        </div>
+      </div>
+      <p id="modal-desc" class="modal-card-desc">
+        Paket aplikasi desktop VISIONA untuk Windows telah selesai dibangun dan siap didistribusikan. Tautan unduhan online akan langsung aktif melalui GitHub Releases resmi segera setelah repositori GitHub pemilik proyek dipublikasikan.
+      </p>
+      <div class="modal-actions-row">
+        <button type="button" id="modal-close-btn" class="btn-pill btn-pill-primary" style="width: 100%; justify-content: center;">
+          <span>Mengerti</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

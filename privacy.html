@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kebijakan Privasi VISIONA</title>
+  <meta name="description" content="Kebijakan Privasi resmi aplikasi VISIONA oleh Xodetech. Menjelaskan pengelolaan data akun lokal, pencatatan hasil skrining mandiri, dan komitmen perlindungan privasi pengguna.">
+  <meta name="author" content="Zakky Mubaraq, Xodetech">
+
+  <!-- Favicon Assets -->
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter (Same as index.html) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Base Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Unified Design System & Document Styles (Strictly Aligned with index.html) -->
+  <style>
+    :root {
+      /* VISIONA Dashboard Authentic Purple Identity (From index.html) */
+      --color-primary: #5548e8;
+      --color-primary-hover: #4639d4;
+      --color-primary-active: #3b2fc4;
+      --color-primary-subtle: #f3f1ff;
+      --color-primary-border: #dcd7fe;
+      --color-primary-glow: rgba(85, 72, 232, 0.14);
+
+      /* Clean White & Neutral Surface Palette (From index.html) */
+      --color-bg-body: #ffffff;
+      --color-bg-soft: #fafbfc;
+      --color-bg-surface: #f4f5f8;
+      --color-dark-obsidian: #0b0c1e;
+
+      /* High-Contrast Editorial Typography Colors (From index.html) */
+      --color-text-main: #0b0c1e;
+      --color-text-body: #475569;
+      --color-text-muted: #828da0;
+      --color-text-faded: #94a3b8;
+      --color-border-subtle: #eaecf0;
+      --color-border-clean: #e2e8f0;
+
+      /* Radii */
+      --radius-pill: 9999px;
+      --radius-card: 20px;
+      --radius-sm: 8px;
+
+      /* Typography */
+      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text-body);
+      background-color: var(--color-bg-body);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    /* ========================================================================
+       1. NAVBAR (Identical to index.html)
+       ======================================================================== */
+    .site-header {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-border-subtle);
+      transition: all 0.25s ease;
+    }
+
+    .navbar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--color-text-main);
+    }
+
+    .nav-brand-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: var(--color-text-main);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--color-text-body);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--color-primary);
+    }
+
+    .btn-pill {
+      border-radius: var(--radius-pill);
+      padding: 0.7rem 1.45rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-pill-primary {
+      background-color: var(--color-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(85, 72, 232, 0.22);
+    }
+
+    .btn-pill-primary:hover {
+      background-color: var(--color-primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(85, 72, 232, 0.32);
+      color: #ffffff;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--color-text-main);
+      border-radius: var(--radius-sm);
+    }
+
+    .mobile-toggle svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
+    /* ========================================================================
+       2. PRIVACY DOCUMENT HEADER (Clean, Balanced & Consistent)
+       ======================================================================== */
+    .privacy-header-section {
+      width: 100%;
+      padding: 3.5rem 0 2.5rem;
+      background: linear-gradient(180deg, var(--color-bg-soft) 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .privacy-header-container {
+      width: 100%;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Primary Main Headline: The ONLY bold title on this page */
+    .privacy-headline {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      color: var(--color-text-main);
+      margin-bottom: 1.25rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .privacy-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.25rem;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--color-border-subtle);
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .privacy-meta-item {
+      color: var(--color-text-muted);
+    }
+
+    /* ========================================================================
+       3. DOCUMENT READING CONTAINER (Clean, Normal-Weight Typography)
+       ======================================================================== */
+    .privacy-content-section {
+      padding: 3.5rem 0 6rem;
+      background-color: var(--color-bg-body);
+    }
+
+    .privacy-article-container {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .privacy-lead-paragraph {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--color-text-main);
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    /* Summary Callout Box */
+    .privacy-callout-card {
+      background-color: var(--color-bg-soft);
+      border: 1px solid var(--color-border-subtle);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--radius-card);
+      padding: 2rem 2.25rem;
+      margin: 2.25rem 0 3.25rem;
+    }
+
+    .privacy-callout-header {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .privacy-callout-header svg {
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .privacy-callout-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .privacy-callout-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--color-text-body);
+      font-weight: 400;
+    }
+
+    .privacy-callout-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.25rem;
+      top: 0.55rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+    }
+
+    /* Section Headings (Normal Consistent Weight, Clean Visual Hierarchy) */
+    .privacy-section-block {
+      margin-top: 3.25rem;
+    }
+
+    .privacy-section-block h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--color-text-main);
+      margin-bottom: 1.15rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .privacy-section-block h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .privacy-section-block p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--color-text-body);
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+    }
+
+    /* Ensure no bold text in body paragraphs or labels */
+    .privacy-article-container strong,
+    .privacy-header-container strong,
+    .privacy-section-block strong {
+      font-weight: 400;
+      color: inherit;
+    }
+
+    /* Standard Editorial Lists */
+    .privacy-section-block ul {
+      margin: 1rem 0 1.5rem 1.5rem;
+      padding: 0;
+    }
+
+    .privacy-section-block li {
+      font-size: 1.025rem;
+      line-height: 1.75;
+      color: var(--color-text-body);
+      margin-bottom: 0.75rem;
+      padding-left: 0.35rem;
+      font-weight: 400;
+    }
+
+    .privacy-section-block li:last-child {
+      margin-bottom: 0;
+    }
+
+    .privacy-section-block ul ul {
+      margin: 0.65rem 0 0.65rem 1.25rem;
+      list-style-type: circle;
+    }
+
+    .privacy-section-block ul ul li {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Note Banner */
+    .privacy-notice-box {
+      background-color: var(--color-primary-subtle);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--color-text-body);
+      font-weight: 400;
+    }
+
+    /* Contact Card */
+    .privacy-contact-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border-clean);
+      border-radius: var(--radius-card);
+      padding: 2rem 2.25rem;
+      margin-top: 1.75rem;
+      box-shadow: 0 4px 16px -2px rgba(11, 12, 30, 0.04);
+    }
+
+    .contact-item-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .contact-item-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-item-label {
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+
+    .contact-item-value {
+      font-size: 1.05rem;
+      color: var(--color-text-main);
+      font-weight: 400;
+    }
+
+    .contact-item-value a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      word-break: break-all;
+    }
+
+    .contact-item-value a:hover {
+      color: var(--color-primary-hover);
+      text-decoration: underline;
+    }
+
+    /* ========================================================================
+       4. FOOTER (Identical to index.html)
+       ======================================================================== */
+    .site-footer {
+      background-color: var(--color-bg-soft);
+      border-top: 1px solid var(--color-border-subtle);
+      padding: 5.5rem 0 3.5rem;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: var(--color-text-main);
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .footer-desc-text {
+      font-size: 0.95rem;
+      color: var(--color-text-body);
+      line-height: 1.7;
+      max-width: 360px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.35rem;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .footer-links-list a {
+      font-size: 0.9375rem;
+      color: var(--color-text-body);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links-list a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-bottom-row {
+      padding-top: 2.25rem;
+      border-top: 1px solid var(--color-border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      flex-wrap: wrap;
+    }
+
+    /* ========================================================================
+       5. RESPONSIVE BREAKPOINTS (From index.html)
+       ======================================================================== */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+      .navbar {
+        height: 64px;
+      }
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--color-border-subtle);
+        box-shadow: 0 12px 24px -4px rgba(11, 12, 30, 0.08);
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .nav-menu.is-active {
+        display: flex;
+      }
+      .nav-actions {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .privacy-header-section {
+        padding: 2.75rem 0 2rem;
+      }
+      .privacy-header-container,
+      .privacy-article-container {
+        padding: 0 1.25rem;
+      }
+      .privacy-headline {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+      .privacy-meta-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.45rem;
+      }
+      .privacy-callout-card {
+        padding: 1.5rem;
+      }
+      .privacy-contact-card {
+        padding: 1.5rem;
+      }
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       A. NAVBAR (Identical to index.html)
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="nav-brand" aria-label="VISIONA Beranda">
+        <img src="assets/images/visiona-logo-dark.png" alt="VISIONA Logo" class="nav-brand-logo">
+        <span class="brand-title">VISIONA</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav id="nav-menu" class="nav-menu" aria-label="Navigasi Utama">
+        <a href="index.html#beranda" class="nav-link">Beranda</a>
+        <a href="index.html#tentang" class="nav-link">Tentang</a>
+        <a href="index.html#pengalaman" class="nav-link">Pengalaman</a>
+        <a href="index.html#fitur" class="nav-link">Fitur</a>
+        <a href="index.html#cara-kerja" class="nav-link">Cara Kerja</a>
+        <a href="privacy.html" class="nav-link active">Privasi</a>
+        <a href="index.html#unduh" class="nav-link">Unduh</a>
+      </nav>
+
+      <!-- Desktop Action CTA -->
+      <div class="nav-actions">
+        <a href="index.html#unduh" class="btn-pill btn-pill-primary">
+          <span>Download VISIONA</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Buka Menu Navigasi" aria-expanded="false" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         B. PRIVACY DOCUMENT HEADER (Without "Beranda" Link, Bold Only on Headline)
+         ====================================================================== -->
+    <section class="privacy-header-section">
+      <div class="privacy-header-container">
+        <h1 class="privacy-headline">Kebijakan Privasi VISIONA</h1>
+
+        <div class="privacy-meta-bar">
+          <div class="privacy-meta-item">
+            Terakhir Diperbarui: 27 Oktober 2026
+          </div>
+          <div class="privacy-meta-item">
+            Pengembang: Xodetech (Zakky Mubaraq)
+          </div>
+          <div class="privacy-meta-item">
+            Sistem Autentikasi: Akun Lokal Mandiri
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         C. PRIVACY CONTENT BODY (No em-dash separator, unnumbered section titles, normal font weights)
+         ====================================================================== -->
+    <section class="privacy-content-section">
+      <div class="privacy-article-container">
+        
+        <p class="privacy-lead-paragraph">
+          Selamat datang di VISIONA Vision Assessment &amp; Eye Health Screening System, aplikasi desktop mandiri untuk membantu masyarakat mengevaluasi fungsi penglihatan secara terstruktur. Kebijakan Privasi ini menjelaskan komitmen kami dalam mengelola data akun lokal dan catatan skrining Anda dengan prinsip transparansi, keamanan, dan kehati-hatian.
+        </p>
+
+        <!-- Clean Summary Callout Box -->
+        <div class="privacy-callout-card">
+          <div class="privacy-callout-header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Komitmen Utama Perlindungan Privasi</span>
+          </div>
+          <ul class="privacy-callout-list">
+            <li>Autentikasi Akun Lokal: Anda masuk menggunakan username dan kata sandi lokal. Kata sandi diamankan melalui algoritma hashing kriptografis satu arah dan tidak pernah disimpan dalam bentuk teks biasa.</li>
+            <li>Bebas Komersialisasi Data: Data Anda tidak pernah dijual, disewakan, atau dibagikan kepada pengiklan maupun pihak ketiga komersial mana pun.</li>
+            <li>Catatan Mandiri Bukan Rekam Medis: Hasil skrining merupakan arsip pribadi untuk pemantauan mandiri, bukan rekam medis publik atau sistem rumah sakit.</li>
+            <li>Kendali Penuh Pengguna: Anda dapat meninjau seluruh riwayat pemeriksaan serta mengelola atau menghapus data skrining langsung di dalam antarmuka aplikasi.</li>
+          </ul>
+        </div>
+
+        <!-- Pendahuluan -->
+        <div class="privacy-section-block">
+          <h2>Pendahuluan</h2>
+          <p>
+            Aplikasi VISIONA dikembangkan oleh Xodetech di bawah arahan Zakky Mubaraq sebagai media edukasi dan penapisan fungsional penglihatan mandiri. Kami menyadari bahwa data terkait pemeriksaan penglihatan bersifat pribadi dan memerlukan perlakuan yang bertanggung jawab.
+          </p>
+          <p>
+            VISIONA menerapkan prinsip <em>data minimization</em>: kami hanya mengumpulkan informasi yang diperlukan untuk mengoperasikan fungsi autentikasi akun lokal dan menyimpan catatan riwayat pemeriksaan pribadi Anda di dalam aplikasi.
+          </p>
+        </div>
+
+        <!-- Data yang Dikumpulkan -->
+        <div class="privacy-section-block">
+          <h2>Data yang Dikumpulkan</h2>
+          <p>
+            VISIONA mengumpulkan data yang Anda berikan secara langsung saat berinteraksi dengan aplikasi:
+          </p>
+          <ul>
+            <li>
+              Informasi Akun Lokal: Username, nama tampilan profil, dan kata sandi yang telah di-hash secara kriptografis satu arah saat proses pendaftaran akun lokal. Kami tidak pernah menyimpan kata sandi Anda dalam format teks terbuka (<em>plain text</em>).
+            </li>
+            <li>
+              Data Respons Skrining Fungsional: Parameter dan pilihan yang Anda masukkan secara sukarela selama menjalankan sesi pemeriksaan digital, meliputi:
+              <ul>
+                <li>Jawaban kuesioner gejala penglihatan dan penapisan tanda bahaya awal.</li>
+                <li>Hasil uji ketajaman penglihatan optotipe Tumbling E untuk mata kanan (OD) dan mata kiri (OS).</li>
+                <li>Hasil uji diskriminasi warna berbasis plat Ishihara digital.</li>
+                <li>Hasil penentuan meridian pada dial astigmatisme.</li>
+                <li>Tingkat sensitivitas kontras.</li>
+                <li>Hasil penapisan lapang pandang perifer.</li>
+                <li>Hasil pengamatan grid Amsler untuk fungsi makula sentral.</li>
+              </ul>
+            </li>
+            <li>
+              Preferensi Kalibrasi Layar: Nilai rasio piksel per milimeter (<em>px_per_mm</em>) yang dihasilkan saat Anda mengalibrasi dimensi layar menggunakan objek referensi fisik, guna memastikan ukuran optotipe visual akurat sesuai standar Snellen/LogMAR.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pengelolaan Autentikasi Akun Lokal -->
+        <div class="privacy-section-block">
+          <h2>Pengelolaan Autentikasi Akun Lokal</h2>
+          <p>
+            Sistem autentikasi VISIONA beroperasi secara mandiri menggunakan kredensial akun lokal:
+          </p>
+          <ul>
+            <li>
+              Tanpa Layanan Autentikasi Eksternal: VISIONA beroperasi secara mandiri tanpa menggunakan akun media sosial atau layanan otorisasi pihak ketiga lainnya.
+            </li>
+            <li>
+              Keamanan Kata Sandi: Seluruh kata sandi diproses menggunakan algoritma hashing satu arah sebelum disimpan dalam basis data penyimpanan.
+            </li>
+            <li>
+              Isolasi Profil: Setiap sesi masuk dikaitkan secara eksklusif dengan ID akun lokal pengguna, sehingga data riwayat skrining Anda tidak dapat diakses oleh pengguna lain yang menggunakan akun berbeda.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tujuan Penggunaan Informasi -->
+        <div class="privacy-section-block">
+          <h2>Tujuan Penggunaan Informasi</h2>
+          <p>
+            Data yang dikumpulkan hanya digunakan untuk tujuan operasional dan edukasi fungsional berikut:
+          </p>
+          <ul>
+            <li>Mengautentikasi dan memvalidasi hak akses ke dalam sesi akun lokal Anda.</li>
+            <li>Menghitung kalkulasi orientasi optotipe dan menentukan estimasi fraksi ketajaman visual (misalnya 6/6, 6/9, atau Snellen equivalent).</li>
+            <li>Menyajikan rangkuman hasil evaluasi mandiri pada dashboard aplikasi setelah sesi pemeriksaan selesai.</li>
+            <li>Menyimpan riwayat skrining berurutan berdasarkan stempel waktu (<em>timestamp</em>) agar Anda dapat memantau kecenderungan fungsi penglihatan dari waktu ke waktu.</li>
+            <li>Menyesuaikan skala visual optotipe berdasarkan ukuran resolusi dan kalibrasi monitor Anda.</li>
+          </ul>
+        </div>
+
+        <!-- Penyimpanan dan Keamanan Data -->
+        <div class="privacy-section-block">
+          <h2>Penyimpanan dan Keamanan Data</h2>
+          <p>
+            Kami menerapkan langkah-langkah teknis yang proporsional untuk melindungi data pengguna:
+          </p>
+          <ul>
+            <li>
+              Penyimpanan Data Terisolasi: Informasi profil akun dan riwayat skrining disimpan dalam basis data sistem aplikasi yang terstruktur.
+            </li>
+            <li>
+              Proteksi Kredensial: Penggunaan algoritma hashing satu arah memastikan kata sandi asli tidak dapat dibaca kembali oleh pihak mana pun.
+            </li>
+            <li>
+              Keamanan Sesi: Autentikasi sesi dibatasi dengan mekanisme validasi internal untuk mencegah akses yang tidak terotorisasi.
+            </li>
+          </ul>
+
+          <div class="privacy-notice-box">
+            Catatan Arsitektur Penyimpanan: Informasi akun dan riwayat skrining dikelola melalui sistem penyimpanan aplikasi. Pengguna disarankan untuk senantiasa menjaga kerahasiaan kata sandi akun lokal dan mengamankan perangkat komputasi pribadi dari akses fisik pihak yang tidak berwenang.
+          </div>
+        </div>
+
+        <!-- Batasan Medis dan Status Catatan Skrining -->
+        <div class="privacy-section-block">
+          <h2>Batasan Medis dan Status Catatan Skrining</h2>
+          <p>
+            Pengguna diharapkan memahami batasan operasional dan kedudukan hukum dari data yang dihasilkan oleh VISIONA:
+          </p>
+          <ul>
+            <li>
+              Bukan Diagnosis Medis: Hasil skrining, estimasi fraksi visual, dan klasifikasi yang ditampilkan oleh VISIONA bersifat edukatif serta bertujuan sebagai penapisan awal mandiri. VISIONA tidak menerbitkan diagnosis medis resmi.
+            </li>
+            <li>
+              Bukan Rekam Medis Rumah Sakit: Catatan pemeriksaan di dalam VISIONA bukan merupakan Rekam Medis Elektronik (RME) resmi fasilitas pelayanan kesehatan (klinik, puskesmas, atau rumah sakit) sebagaimana diatur dalam regulasi kementerian kesehatan.
+            </li>
+            <li>
+              Konsultasi Spesialis: Apabila Anda mengalami keluhan penglihatan mendadak, mata merah berulang, nyeri bola mata, atau kilatan cahaya (<em>flashes/floaters</em>), segera lakukan pemeriksaan komprehensif ke dokter spesialis mata terdekat.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pembagian Data kepada Pihak Ketiga -->
+        <div class="privacy-section-block">
+          <h2>Pembagian Data kepada Pihak Ketiga</h2>
+          <p>
+            Komitmen kami terhadap data pribadi Anda:
+          </p>
+          <ul>
+            <li>Tidak Ada Penjualan Data: Kami tidak pernah menjual, menyewakan, atau mengomersialkan data pribadi, kredensial, maupun riwayat pemeriksaan Anda kepada pihak mana pun.</li>
+            <li>Tanpa Pelacak Iklan: Aplikasi VISIONA tidak menyematkan modul iklan pihak ketiga, SDK pelacak perilaku komersial, atau cookie periklanan tertarget.</li>
+            <li>Tanpa Integrasi Eksternal: Tidak ada pertukaran data otomatis dengan platform medis pihak ketiga, asuransi, atau lembaga komersial eksternal.</li>
+          </ul>
+        </div>
+
+        <!-- Hak dan Kendali Pengguna atas Data -->
+        <div class="privacy-section-block">
+          <h2>Hak dan Kendali Pengguna atas Data</h2>
+          <p>
+            Sebagai pengguna VISIONA, Anda memiliki hak penuh atas data yang Anda simpan di dalam aplikasi:
+          </p>
+          <ul>
+            <li>Hak Akses dan Peninjauan: Anda dapat membuka dan meninjau seluruh riwayat skrining sebelumnya kapan pun melalui menu Riwayat di dalam antarmuka aplikasi.</li>
+            <li>Hak Pembaruan Informasi: Anda dapat memperbarui nama tampilan profil dan mengganti kata sandi akun lokal melalui menu pengaturan akun.</li>
+            <li>Hak Penghapusan Catatan Skrining: Anda dapat menghapus entri riwayat pemeriksaan tertentu langsung dari aplikasi apabila data tersebut tidak lagi dibutuhkan.</li>
+            <li>Hak Penghapusan Akun: Anda berhak mengajukan permohonan penghapusan menyeluruh atas akun lokal dan semua rekaman riwayat terkait dengan menghubungi kontak pengembang resmi kami.</li>
+          </ul>
+        </div>
+
+        <!-- Masa Penyimpanan Data -->
+        <div class="privacy-section-block">
+          <h2>Masa Penyimpanan Data</h2>
+          <p>
+            Informasi akun lokal dan catatan skrining fungsional disimpan selama akun Anda aktif dan Anda memilih untuk mempertahankan arsip pemantauan tersebut di dalam aplikasi. Jika akun dihapus, seluruh riwayat skrining yang terhubung akan dihapus secara permanen dari sistem penyimpanan aplikasi.
+          </p>
+        </div>
+
+        <!-- Perubahan Kebijakan Privasi -->
+        <div class="privacy-section-block">
+          <h2>Perubahan Kebijakan Privasi</h2>
+          <p>
+            Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu guna menyesuaikan dengan perkembangan fitur aplikasi VISIONA atau kepatuhan regulasi perlindungan data yang berlaku. Setiap pembaruan akan dicantumkan pada halaman ini dengan tanggal revisi terbaru di bagian atas dokumen.
+          </p>
+        </div>
+
+        <!-- Kontak dan Informasi Pengembang -->
+        <div class="privacy-section-block">
+          <h2>Kontak dan Informasi Pengembang</h2>
+          <p>
+            Jika Anda memiliki pertanyaan, saran, atau permohonan terkait pengelolaan data dan privasi pada aplikasi VISIONA, silakan menghubungi pengembang kami:
+          </p>
+
+          <div class="privacy-contact-card">
+            <div class="contact-item-row">
+              <span class="contact-item-label">Pengembang</span>
+              <span class="contact-item-value">Zakky Mubaraq</span>
+            </div>
+            <div class="contact-item-row">
+              <span class="contact-item-label">Organisasi / Entitas</span>
+              <span class="contact-item-value">Xodetech</span>
+            </div>
+            <div class="contact-item-row">
+              <span class="contact-item-label">Email Resmi</span>
+              <span class="contact-item-value"><a href="mailto:xodetech90@gmail.com">xodetech90@gmail.com</a></span>
+            </div>
+            <div class="contact-item-row">
+              <span class="contact-item-label">Proyek</span>
+              <span class="contact-item-value">VISIONA Vision Assessment &amp; Eye Health Screening System</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       D. FOOTER (Identical to index.html)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="footer-brand-title">
+            <img src="assets/images/visiona-logo-dark.png" alt="VISIONA Logo" style="width: 24px; height: 24px; object-fit: contain;">
+            <span>VISIONA</span>
+          </div>
+          <p class="footer-desc-text">
+            Aplikasi desktop mandiri untuk skrining awal kesehatan mata dan edukasi penglihatan fungsional.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#beranda">Beranda</a></li>
+            <li><a href="index.html#tentang">Tentang VISIONA</a></li>
+            <li><a href="index.html#pengalaman">Pratinjau Aplikasi</a></li>
+            <li><a href="index.html#fitur">Fitur Skrining</a></li>
+            <li><a href="index.html#cara-kerja">Cara Kerja</a></li>
+            <li><a href="index.html#unduh">Unduh Desktop</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hukum &amp; Privasi</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html">Kebijakan Privasi</a></li>
+            <li><a href="terms.html">Syarat &amp; Ketentuan</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>
+          &copy; <span id="current-year">2026</span> <strong>VISIONA</strong>. Seluruh hak cipta dilindungi undang-undang.
+        </div>
+        <div>
+          Skrining mandiri tidak menggantikan pemeriksaan profesional oleh dokter spesialis mata.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Website Script (Dynamic Year & Mobile Toggle) -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

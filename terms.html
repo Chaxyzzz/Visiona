@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syarat &amp; Ketentuan Layanan VISIONA</title>
+  <meta name="description" content="Syarat dan Ketentuan Layanan resmi aplikasi VISIONA oleh Xodetech. Berisi penafian medis, ketentuan lisensi perangkat lunak desktop, dan batasan penggunaan aplikasi.">
+  <meta name="author" content="Zakky Mubaraq, Xodetech">
+
+  <!-- Favicon Assets -->
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter (Same as index.html and privacy.html) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Base Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Unified Design System & Document Styles (Strictly Aligned with privacy.html) -->
+  <style>
+    :root {
+      /* VISIONA Dashboard Authentic Purple Identity (From index.html & privacy.html) */
+      --color-primary: #5548e8;
+      --color-primary-hover: #4639d4;
+      --color-primary-active: #3b2fc4;
+      --color-primary-subtle: #f3f1ff;
+      --color-primary-border: #dcd7fe;
+      --color-primary-glow: rgba(85, 72, 232, 0.14);
+
+      /* Clean White & Neutral Surface Palette */
+      --color-bg-body: #ffffff;
+      --color-bg-soft: #fafbfc;
+      --color-bg-surface: #f4f5f8;
+      --color-dark-obsidian: #0b0c1e;
+
+      /* High-Contrast Editorial Typography Colors */
+      --color-text-main: #0b0c1e;
+      --color-text-body: #475569;
+      --color-text-muted: #828da0;
+      --color-text-faded: #94a3b8;
+      --color-border-subtle: #eaecf0;
+      --color-border-clean: #e2e8f0;
+
+      /* Radii */
+      --radius-pill: 9999px;
+      --radius-card: 20px;
+      --radius-sm: 8px;
+
+      /* Typography */
+      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text-body);
+      background-color: var(--color-bg-body);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    /* ========================================================================
+       1. NAVBAR (Identical to index.html & privacy.html)
+       ======================================================================== */
+    .site-header {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-border-subtle);
+      transition: all 0.25s ease;
+    }
+
+    .navbar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--color-text-main);
+    }
+
+    .nav-brand-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: var(--color-text-main);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--color-text-body);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--color-primary);
+    }
+
+    .btn-pill {
+      border-radius: var(--radius-pill);
+      padding: 0.7rem 1.45rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-pill-primary {
+      background-color: var(--color-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(85, 72, 232, 0.22);
+    }
+
+    .btn-pill-primary:hover {
+      background-color: var(--color-primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(85, 72, 232, 0.32);
+      color: #ffffff;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--color-text-main);
+      border-radius: var(--radius-sm);
+    }
+
+    .mobile-toggle svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
+    /* ========================================================================
+       2. TERMS DOCUMENT HEADER (Clean, Balanced & Consistent)
+       ======================================================================== */
+    .terms-header-section {
+      width: 100%;
+      padding: 3.5rem 0 2.5rem;
+      background: linear-gradient(180deg, var(--color-bg-soft) 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .terms-header-container {
+      width: 100%;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Primary Main Headline: The ONLY bold title on this page */
+    .terms-headline {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      color: var(--color-text-main);
+      margin-bottom: 1.25rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .terms-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.25rem;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--color-border-subtle);
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .terms-meta-item {
+      color: var(--color-text-muted);
+    }
+
+    /* ========================================================================
+       3. DOCUMENT READING CONTAINER (Clean, Normal-Weight Typography)
+       ======================================================================== */
+    .terms-content-section {
+      padding: 3.5rem 0 6rem;
+      background-color: var(--color-bg-body);
+    }
+
+    .terms-article-container {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .terms-lead-paragraph {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--color-text-main);
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    /* Medical Disclaimer Callout Box */
+    .terms-callout-card {
+      background-color: var(--color-bg-soft);
+      border: 1px solid var(--color-border-subtle);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--radius-card);
+      padding: 2rem 2.25rem;
+      margin: 2.25rem 0 3.25rem;
+    }
+
+    .terms-callout-header {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .terms-callout-header svg {
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .terms-callout-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .terms-callout-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--color-text-body);
+      font-weight: 400;
+    }
+
+    .terms-callout-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.25rem;
+      top: 0.55rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+    }
+
+    /* Section Headings (Normal Consistent Weight, Clean Visual Hierarchy) */
+    .terms-section-block {
+      margin-top: 3.25rem;
+    }
+
+    .terms-section-block h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--color-text-main);
+      margin-bottom: 1.15rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .terms-section-block h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .terms-section-block p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--color-text-body);
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+    }
+
+    /* Ensure no bold text in body paragraphs or labels */
+    .terms-article-container strong,
+    .terms-header-container strong,
+    .terms-section-block strong {
+      font-weight: 400;
+      color: inherit;
+    }
+
+    /* Standard Editorial Lists */
+    .terms-section-block ul {
+      margin: 1rem 0 1.5rem 1.5rem;
+      padding: 0;
+    }
+
+    .terms-section-block li {
+      font-size: 1.025rem;
+      line-height: 1.75;
+      color: var(--color-text-body);
+      margin-bottom: 0.75rem;
+      padding-left: 0.35rem;
+      font-weight: 400;
+    }
+
+    .terms-section-block li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Notice Box */
+    .terms-notice-box {
+      background-color: var(--color-primary-subtle);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--color-text-body);
+      font-weight: 400;
+    }
+
+    /* Contact Card */
+    .terms-contact-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border-clean);
+      border-radius: var(--radius-card);
+      padding: 2rem 2.25rem;
+      margin-top: 1.75rem;
+      box-shadow: 0 4px 16px -2px rgba(11, 12, 30, 0.04);
+    }
+
+    .contact-item-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .contact-item-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-item-label {
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+
+    .contact-item-value {
+      font-size: 1.05rem;
+      color: var(--color-text-main);
+      font-weight: 400;
+    }
+
+    .contact-item-value a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      word-break: break-all;
+    }
+
+    .contact-item-value a:hover {
+      color: var(--color-primary-hover);
+      text-decoration: underline;
+    }
+
+    /* ========================================================================
+       4. FOOTER (Identical to index.html & privacy.html)
+       ======================================================================== */
+    .site-footer {
+      background-color: var(--color-bg-soft);
+      border-top: 1px solid var(--color-border-subtle);
+      padding: 5.5rem 0 3.5rem;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: var(--color-text-main);
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .footer-desc-text {
+      font-size: 0.95rem;
+      color: var(--color-text-body);
+      line-height: 1.7;
+      max-width: 360px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.35rem;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .footer-links-list a {
+      font-size: 0.9375rem;
+      color: var(--color-text-body);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links-list a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-bottom-row {
+      padding-top: 2.25rem;
+      border-top: 1px solid var(--color-border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      flex-wrap: wrap;
+    }
+
+    /* ========================================================================
+       5. RESPONSIVE BREAKPOINTS (Identical to privacy.html)
+       ======================================================================== */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+      .navbar {
+        height: 64px;
+      }
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--color-border-subtle);
+        box-shadow: 0 12px 24px -4px rgba(11, 12, 30, 0.08);
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .nav-menu.is-active {
+        display: flex;
+      }
+      .nav-actions {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .terms-header-section {
+        padding: 2.75rem 0 2rem;
+      }
+      .terms-header-container,
+      .terms-article-container {
+        padding: 0 1.25rem;
+      }
+      .terms-headline {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+      .terms-meta-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.45rem;
+      }
+      .terms-callout-card {
+        padding: 1.5rem;
+      }
+      .terms-contact-card {
+        padding: 1.5rem;
+      }
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       A. NAVBAR (Identical to index.html & privacy.html)
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="nav-brand" aria-label="VISIONA Beranda">
+        <img src="assets/images/visiona-logo-dark.png" alt="VISIONA Logo" class="nav-brand-logo">
+        <span class="brand-title">VISIONA</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav id="nav-menu" class="nav-menu" aria-label="Navigasi Utama">
+        <a href="index.html#beranda" class="nav-link">Beranda</a>
+        <a href="index.html#tentang" class="nav-link">Tentang</a>
+        <a href="index.html#pengalaman" class="nav-link">Pengalaman</a>
+        <a href="index.html#fitur" class="nav-link">Fitur</a>
+        <a href="index.html#cara-kerja" class="nav-link">Cara Kerja</a>
+        <a href="privacy.html" class="nav-link">Privasi</a>
+        <a href="index.html#unduh" class="nav-link">Unduh</a>
+      </nav>
+
+      <!-- Desktop Action CTA -->
+      <div class="nav-actions">
+        <a href="index.html#unduh" class="btn-pill btn-pill-primary">
+          <span>Download VISIONA</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Buka Menu Navigasi" aria-expanded="false" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         B. TERMS DOCUMENT HEADER (Bold Only on Headline, No 'Beranda' Link)
+         ====================================================================== -->
+    <section class="terms-header-section">
+      <div class="terms-header-container">
+        <h1 class="terms-headline">Syarat &amp; Ketentuan Layanan VISIONA</h1>
+
+        <div class="terms-meta-bar">
+          <div class="terms-meta-item">
+            Terakhir Diperbarui: 27 Oktober 2026
+          </div>
+          <div class="terms-meta-item">
+            Pengembang: Xodetech (Zakky Mubaraq)
+          </div>
+          <div class="terms-meta-item">
+            Status Layanan: Penapisan Mandiri &amp; Edukasi
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         C. TERMS CONTENT BODY (No em-dash separator, unnumbered section titles, normal font weights)
+         ====================================================================== -->
+    <section class="terms-content-section">
+      <div class="terms-article-container">
+        
+        <p class="terms-lead-paragraph">
+          Selamat datang di VISIONA Vision Assessment &amp; Eye Health Screening System, perangkat lunak desktop skrining mandiri yang disediakan oleh Xodetech di bawah pengembangan Zakky Mubaraq. Dengan mengunduh, memasang, atau menggunakan aplikasi VISIONA, Anda menyatakan telah membaca, memahami, dan menyetujui untuk terikat oleh Syarat dan Ketentuan Layanan ini.
+        </p>
+
+        <p class="terms-lead-paragraph" style="font-size: 1.05rem; margin-top: -1rem;">
+          Jika Anda tidak menyetujui salah satu bagian dari ketentuan ini, Anda disarankan untuk tidak menggunakan aplikasi atau situs web ini.
+        </p>
+
+        <!-- Critical Medical Disclaimer Callout Box -->
+        <div class="terms-callout-card">
+          <div class="terms-callout-header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span>Penafian Medis &amp; Batasan Klinis Utama</span>
+          </div>
+          <ul class="terms-callout-list">
+            <li>Bukan Pengganti Diagnosis Medis: Aplikasi VISIONA dirancang khusus sebagai alat bantu penapisan orientasi mandiri dan sarana edukasi fungsi penglihatan. VISIONA bukan alat diagnosis medis dan tidak dapat menggantikan pemeriksaan mata menyeluruh oleh dokter spesialis mata (Sp.M), optometris, atau fasilitas pelayanan kesehatan berwenang.</li>
+            <li>Pengaruh Faktor Perangkat dan Lingkungan: Hasil evaluasi visual dipengaruhi oleh ukuran fisik layar monitor, kepadatan piksel (PPI), resolusi tampilan, tingkat kecerahan, pencahayaan ruangan sekitar, serta kepatuhan pengguna terhadap jarak pengamatan yang terkalibrasi. Hasil skrining tidak boleh dijadikan dasar penetapan terapi medis, resep kacamata, atau penentuan kelainan refraksi definitif.</li>
+            <li>Protokol Gejala Darurat: Jika Anda atau orang di sekitar Anda mengalami keluhan penglihatan mendadak, mata merah disertai nyeri hebat, kilatan cahaya (flashes), bayangan tirai hitam pada lapang pandang, atau cedera fisik pada mata, segera cari pertolongan medis di Instalasi Gawat Darurat (IGD) atau rumah sakit terdekat.</li>
+          </ul>
+        </div>
+
+        <!-- Penggunaan Lisensi Aplikasi -->
+        <div class="terms-section-block">
+          <h2>Penggunaan Lisensi Aplikasi</h2>
+          <p>
+            Xodetech memberikan lisensi terbatas, personal, non-eksklusif, dan tidak dapat dialihkan untuk mengunduh, memasang, dan menjalankan aplikasi VISIONA pada komputer pribadi (Windows atau macOS) untuk kepentingan evaluasi fungsi penglihatan mandiri atau keluarga.
+          </p>
+          <p>Pengguna dilarang untuk:</p>
+          <ul>
+            <li>Mendekompilasi, merekayasa balik (reverse engineering), membongkar, atau memodifikasi berkas biner aplikasi.</li>
+            <li>Menggunakan aplikasi ini sebagai sistem rekam medis komersial berbayar di klinik atau institusi tanpa izin tertulis dari Xodetech.</li>
+            <li>Mengintegrasikan kode aplikasi dengan perangkat lunak perusak atau aktivitas yang melanggar hukum.</li>
+          </ul>
+        </div>
+
+        <!-- Autentikasi Akun Lokal dan Keamanan Perangkat -->
+        <div class="terms-section-block">
+          <h2>Autentikasi Akun Lokal dan Keamanan Perangkat</h2>
+          <p>
+            Aplikasi VISIONA menyediakan sistem masuk akun lokal mandiri menggunakan username dan kata sandi untuk menyimpan serta meninjau riwayat skrining Anda di dalam aplikasi.
+          </p>
+          <p>
+            Kata sandi diproses dengan algoritma hashing kriptografis satu arah sebelum disimpan dalam basis data internal. Pengguna bertanggung jawab penuh atas keamanan fisik perangkat komputasi pribadi, pencegahan akses tidak terotorisasi, dan kerahasiaan kata sandi akun lokal yang digunakan.
+          </p>
+          <div class="terms-notice-box">
+            Aplikasi VISIONA beroperasi secara mandiri tanpa menggunakan akun media sosial atau layanan otorisasi eksternal lainnya.
+          </div>
+        </div>
+
+        <!-- Hak Kekayaan Intelektual -->
+        <div class="terms-section-block">
+          <h2>Hak Kekayaan Intelektual</h2>
+          <p>
+            Seluruh merek dagang, logo VISIONA, nama perangkat lunak, rancangan arsitektur modul skrining, kode antarmuka, tata letak visual, dan materi edukasi kesehatan mata yang tercantum dalam aplikasi dan situs web ini adalah hak kekayaan intelektual milik Xodetech dan penciptanya, Zakky Mubaraq, yang dilindungi oleh peraturan perundang-undangan hak cipta Republik Indonesia dan traktat internasional.
+          </p>
+        </div>
+
+        <!-- Batasan Tanggung Jawab -->
+        <div class="terms-section-block">
+          <h2>Batasan Tanggung Jawab</h2>
+          <p>
+            Aplikasi VISIONA dan seluruh informasi di dalamnya disediakan dengan dasar sebagaimana adanya (as-is) dan sebagaimana tersedia (as-available) tanpa jaminan dalam bentuk apa pun, baik tersurat maupun tersirat.
+          </p>
+          <p>
+            Dalam batas maksimum yang diizinkan oleh hukum yang berlaku, Xodetech, pencipta, maupun kontributor pengembang tidak bertanggung jawab atas kerugian langsung, tidak langsung, insidental, atau konsekuensial (termasuk keterlambatan mencari pertolongan medis spesialis, kesalahan interpretasi mandiri atas hasil skrining, atau kehilangan data perangkat) yang timbul dari penggunaan atau ketidakmampuan menggunakan aplikasi ini.
+          </p>
+        </div>
+
+        <!-- Pembaruan Ketentuan Layanan -->
+        <div class="terms-section-block">
+          <h2>Pembaruan Ketentuan Layanan</h2>
+          <p>
+            Kami berhak untuk mengubah, memperbarui, menambah, atau mengurangi ketentuan dalam dokumen Syarat dan Ketentuan ini sewaktu-waktu. Perubahan akan berlaku segera setelah versi terbaru dipublikasikan pada halaman ini dengan mencantumkan tanggal pembaruan terkini.
+          </p>
+        </div>
+
+        <!-- Hukum yang Mengatur dan Kontak -->
+        <div class="terms-section-block">
+          <h2>Hukum yang Mengatur dan Kontak</h2>
+          <p>
+            Syarat dan Ketentuan ini diatur dan ditafsirkan sesuai dengan hukum yang berlaku di Negara Kesatuan Republik Indonesia. Setiap perselisihan yang timbul sehubungan dengan ketentuan ini akan diselesaikan secara musyawarah untuk mufakat.
+          </p>
+          <p>
+            Untuk pertanyaan, masukan, atau korespondensi resmi mengenai Syarat dan Ketentuan Layanan VISIONA, silakan menghubungi kami:
+          </p>
+
+          <div class="terms-contact-card">
+            <div class="contact-item-row">
+              <span class="contact-item-label">Pengembang</span>
+              <span class="contact-item-value">Zakky Mubaraq</span>
+            </div>
+            <div class="contact-item-row">
+              <span class="contact-item-label">Organisasi / Entitas</span>
+              <span class="contact-item-value">Xodetech</span>
+            </div>
+            <div class="contact-item-row">
+              <span class="contact-item-label">Email Resmi</span>
+              <span class="contact-item-value"><a href="mailto:xodetech90@gmail.com">xodetech90@gmail.com</a></span>
+            </div>
+            <div class="contact-item-row">
+              <span class="contact-item-label">Proyek</span>
+              <span class="contact-item-value">VISIONA Vision Assessment &amp; Eye Health Screening System</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       D. FOOTER (Identical to index.html & privacy.html)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="footer-brand-title">
+            <img src="assets/images/visiona-logo-dark.png" alt="VISIONA Logo" style="width: 24px; height: 24px; object-fit: contain;">
+            <span>VISIONA</span>
+          </div>
+          <p class="footer-desc-text">
+            Aplikasi desktop mandiri untuk skrining awal kesehatan mata dan edukasi penglihatan fungsional.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#beranda">Beranda</a></li>
+            <li><a href="index.html#tentang">Tentang VISIONA</a></li>
+            <li><a href="index.html#pengalaman">Pratinjau Aplikasi</a></li>
+            <li><a href="index.html#fitur">Fitur Skrining</a></li>
+            <li><a href="index.html#cara-kerja">Cara Kerja</a></li>
+            <li><a href="index.html#unduh">Unduh Desktop</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hukum &amp; Privasi</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html">Kebijakan Privasi</a></li>
+            <li><a href="terms.html" style="color: var(--color-primary); font-weight: 500;">Syarat &amp; Ketentuan</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>
+          &copy; <span id="current-year">2026</span> <strong>VISIONA</strong>. Seluruh hak cipta dilindungi undang-undang.
+        </div>
+        <div>
+          Skrining mandiri tidak menggantikan pemeriksaan profesional oleh dokter spesialis mata.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Website Script (Dynamic Year & Mobile Toggle) -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
