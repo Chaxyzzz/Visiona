@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         id: 'btn-status-mac',
         platformName: 'macOS',
         title: 'VISIONA for macOS',
-        fileName: 'VISIONA.dmg',
+        fileName: '',
         fileSizeText: 'Dalam Persiapan',
         isLocalReady: false,
         desc: 'Paket distribusi macOS (.dmg) untuk arsitektur Intel dan Apple Silicon sedang dalam tahap persiapan dan belum tersedia untuk diunduh.'
@@ -89,7 +89,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const config = VISIONA_RELEASE_CONFIG.platforms[platformKey] || VISIONA_RELEASE_CONFIG.platforms.winSetup;
     
     if (modalTitle) modalTitle.textContent = config.title;
-    if (modalFilenameTag) modalFilenameTag.textContent = config.fileName;
+    if (modalFilenameTag) {
+      if (config.fileName) {
+        modalFilenameTag.textContent = config.fileName;
+        modalFilenameTag.style.display = 'inline-block';
+      } else {
+        modalFilenameTag.textContent = '';
+        modalFilenameTag.style.display = 'none';
+      }
+    }
     if (modalLocalStatus) {
       modalLocalStatus.textContent = config.fileSizeText;
       modalLocalStatus.className = 'modal-status-val ' + (config.isLocalReady ? 'text-success' : 'text-muted');
