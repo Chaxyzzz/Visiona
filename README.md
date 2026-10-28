@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="gh-pages/assets/images/visiona-logo-dark.png" alt="VISIONA Logo" width="120">
+<img src="https://raw.githubusercontent.com/Chaxyzzz/Visiona/main/assets/images/visiona-logo-dark.png" alt="VISIONA Logo" width="140">
 
 # VISIONA
 
