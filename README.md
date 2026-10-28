@@ -1,76 +1,94 @@
-# Website Resmi & Dokumen Publik VISIONA (GitHub Pages)
+<div align="center">
+  <img src="gh-pages/assets/images/visiona-logo-dark.png" alt="Logo VISIONA" width="150" />
 
-Direktori ini (`c:\laragon\www\visiona\gh-pages`) memuat berkas website publik resmi **VISIONA** (Vision Assessment & Eye Health Screening System) yang dikembangkan oleh **Xodetech** (Pencipta: Zakky Mubaraq).
+VISIONA
+  Vision Assessment & Eye Health Screening System
 
-Website ini dirancang khusus sebagai **portal informasi resmi dan halaman distribusi aplikasi desktop** (Windows & macOS), sekaligus memuat dokumen kebijakan privasi dan syarat layanan yang memenuhi persyaratan Google Identity Platform (OAuth 2.0).
+  Aplikasi desktop untuk skrining mandiri kesehatan penglihatan.
 
----
+  Dikembangkan oleh Xodetech · Pencipta: Zakky Mubaraq
+  <br />
+  <img src="gh-pages/assets/images/app-screenings-preview.png" alt="Pratinjau antarmuka aplikasi VISIONA" width="820" />
+</div>
 
-## 1. Struktur Berkas
+Tentang VISIONA
+VISIONA adalah aplikasi desktop yang membantu pengguna melakukan skrining awal penglihatan secara mandiri, meninjau hasil, dan melihat riwayat pemeriksaan mereka. Antarmuka dirancang agar proses skrining terasa jelas, terarah, dan mudah diikuti.
+Catatan medis: VISIONA merupakan alat skrining awal, bukan alat diagnosis, surat keterangan medis, atau pengganti pemeriksaan oleh tenaga kesehatan profesional. Hasil skrining tidak memastikan ada atau tidaknya suatu penyakit mata.
 
+Fitur utama
+- Delapan modul skrining untuk beberapa aspek penglihatan.
+- Hasil dan riwayat pribadi agar pengguna dapat meninjau pemeriksaan sebelumnya.
+- Ringkasan perkembangan berdasarkan data pemeriksaan yang tersimpan.
+- Penyimpanan lokal untuk data skrining pada komputer yang digunakan; data tidak otomatis tersinkron ke komputer lain.
+- Antarmuka desktop yang ditujukan untuk penggunaan personal.
+Modul skrining
+Modul	Tujuan umum
+Kuesioner Gejala	Mengumpulkan informasi awal mengenai gejala yang dirasakan.
+Ketajaman Visual	Menilai ketajaman penglihatan secara digital pada mata kanan dan kiri.
+Penglihatan Warna	Melakukan skrining awal kemampuan membedakan warna.
+Astigmatisme	Mengamati kemungkinan pola penglihatan yang berkaitan dengan astigmatisme.
+Sensitivitas Kontras	Menilai kemampuan mengenali perbedaan kontras.
+Lapang Pandang Sederhana	Melakukan pemeriksaan awal pada area penglihatan.
+Penglihatan Dekat	Melakukan skrining kemampuan melihat objek pada jarak dekat.
+Grid Amsler	Membantu mengamati distorsi pada pola kisi saat dilihat satu mata secara bergantian.
+
+
+Hasil setiap modul dipengaruhi oleh kondisi penggunaan, termasuk layar, resolusi dan skala tampilan, pencahayaan, jarak pandang, serta kondisi pengguna.
+Alur aplikasi
+Diagram berikut menunjukkan alur umum penggunaan VISIONA.
+```mermaid
+flowchart TD
+    A([Buka VISIONA]) --> B{Autentikasi diperlukan?}
+    B -- Ya --> C[Masuk dengan akun yang didukung]
+    B -- Tidak --> D[Dashboard]
+    C --> D
+    D --> E[Pilih modul skrining]
+    E --> F[Baca petunjuk dan persiapan]
+    F --> G{Ada gejala tanda bahaya?}
+    G -- Ya --> H[Hentikan skrining dan cari bantuan medis]
+    G -- Tidak --> I[Lakukan skrining]
+    I --> J[Tinjau hasil skrining]
+    J --> K[Simpan hasil pada perangkat]
+    K --> L[Riwayat dan ringkasan perkembangan]
+    L --> D
 ```
+Privasi dan penyimpanan data
+- Riwayat skrining dan preferensi lokal disimpan pada perangkat tempat aplikasi digunakan.
+- Data lokal tidak otomatis tersedia di komputer lain.
+- Jangan menggunakan perangkat bersama tanpa mengamankan sesi dan akses ke profil pribadi.
+- Untuk ketentuan lengkap, baca [Kebijakan Privasi](gh-pages/privacy.html) dan [Syarat & Ketentuan](gh-pages/terms.html).
+Detail implementasi autentikasi dan penyimpanan mengikuti versi aplikasi yang didistribusikan. Jangan memasukkan kata sandi Google ke dalam aplikasi atau membagikan data kesehatan pribadi kepada pihak lain.
+Teknologi
+VISIONA dikembangkan sebagai aplikasi desktop dengan antarmuka web modern dan runtime aplikasi berbasis Electron. Komponen backend, runtime, serta penyimpanan yang dibundel dapat berbeda sesuai paket rilis. Distribusi final harus diuji sebagai aplikasi mandiri dan tidak boleh mengharuskan pengguna akhir memasang Laragon atau mengonfigurasi basis data secara manual.
+Unduhan
+Periksa halaman GitHub Releases untuk melihat paket yang benar-benar telah diterbitkan.
+- Windows: gunakan installer atau paket portabel yang tercantum pada rilis resmi.
+- macOS: paket DMG untuk Intel dan Apple Silicon hanya dapat dianggap tersedia setelah berkas rilis dipublikasikan dan diuji pada perangkat/runner macOS yang sesuai.
+Jika belum ada berkas rilis untuk platform tertentu, berarti paket tersebut belum tersedia untuk diunduh.
+Menjalankan website publik secara lokal
+Website informasi VISIONA berada di direktori gh-pages/ dan dapat dibuka langsung melalui index.html.
 gh-pages/
-├── assets/
-│   ├── css/
-│   │   └── style.css            # Stylesheet utama (desain premium, responsif, zero external CDN)
-│   ├── images/
-│   │   ├── visiona-logo-dark.png# Logo resmi VISIONA
-│   │   ├── app-screenings-preview.png # Screenshot asli antarmuka modul skrining desktop
-│   │   ├── favicon.ico
-│   │   └── ...                  # Ikon aplikasi
-│   └── js/
-│       └── main.js              # Interaksi ringan (mobile drawer menu, dynamic year)
-├── backup_initial/              # Cadangan berkas sebelum redesign
-├── index.html                   # Halaman beranda utama resmi
-├── privacy.html                 # Kebijakan Privasi resmi
-├── terms.html                   # Syarat & Ketentuan Layanan (Medical Disclaimer)
-└── README.md                    # Dokumentasi ini
-```
-
----
-
-## 2. Cara Menguji dan Membuka Website Secara Lokal
-
-Anda dapat membuka dan memeriksa tampilan website secara lokal melalui salah satu cara berikut:
-
-### Cara 1: Buka Langsung di Browser
-Klik dua kali berkas `index.html` pada File Explorer:
-`C:\laragon\www\visiona\gh-pages\index.html`
-Website akan terbuka langsung di browser default (Chrome, Firefox, Edge, Safari) tanpa perlu menjalankan server web. Seluruh aset gambar, CSS, dan skrip bekerja secara mandiri secara lokal.
-
-### Cara 2: Menjalankan Local Web Server Sederhana (Opsional)
-Jalankan perintah berikut di terminal:
-```bash
-cd c:\laragon\www\visiona\gh-pages
+├── index.html
+├── privacy.html
+├── terms.html
+└── assets/
+    ├── css/style.css
+    ├── images/
+    └── js/main.js
+Untuk mengujinya menggunakan server PHP lokal (opsional):
+cd C:\laragon\www\visiona\gh-pages
 php -S localhost:8080
-```
-Lalu buka: `http://localhost:8080` di browser.
+Kemudian buka http://localhost:8080 pada browser.
+Distribusi dan situs resmi
+- Repositori: Chaxyzzz/Visiona
+- Releases: Unduhan aplikasi
+- Website GitHub Pages: Buka website VISIONA
+Status tautan publik dan aset unduhan mengikuti konfigurasi serta rilis terbaru di GitHub.
+Batasan penggunaan
+Skrining digital tidak menggantikan pemeriksaan mata secara langsung. Akurasi dapat dipengaruhi oleh ukuran dan resolusi layar, pembesaran tampilan, kalibrasi warna, pencahayaan, jarak pengguna dari layar, serta cara pengujian dilakukan.
 
----
-
-## 3. Langkah Publikasi ke GitHub Pages & GitHub Releases (Ketika Sudah Disetujui)
-
-Saat pemilik proyek siap memublikasikan website dan mendistribusikan aplikasi VISIONA:
-
-### A. Rilis Biner Aplikasi Desktop (GitHub Releases):
-1. Masuk ke repositori GitHub `visiona`.
-2. Buka menu **Releases** &rarr; **Draft a new release**.
-3. Buat rilis baru (misal tag: `latest`).
-4. Unggah kedua berkas biner mandiri yang telah dikompilasi di folder `dist/`:
-   - `dist/VISIONA-Setup.exe` (Installer Windows)
-   - `dist/VISIONA-Portable.exe` (Aplikasi Portabel Windows)
-5. Simpan rilis. Tautan unduhan otomatis aktif melalui:
-   - `https://github.com/<username>/visiona/releases/latest/download/VISIONA-Setup.exe`
-   - `https://github.com/<username>/visiona/releases/latest/download/VISIONA-Portable.exe`
-
-### B. Publikasi Website ke GitHub Pages:
-1. Unggah seluruh isi folder `gh-pages/` (termasuk folder `assets/`).
-2. Masuk ke **Settings** &rarr; **Pages** di repositori tersebut.
-3. Pada **Build and deployment**:
-   - Source: **Deploy from a branch**
-   - Branch: `main` / `root`
-   - Klik **Save**.
-4. Situs akan aktif di alamat:
-   - Beranda: `https://<username>.github.io/<nama-repo>/`
-   - Kebijakan Privasi: `https://<username>.github.io/<nama-repo>/privacy.html`
-   - Syarat & Ketentuan: `https://<username>.github.io/<nama-repo>/terms.html`
+Apabila mengalami kehilangan penglihatan mendadak, nyeri mata berat, cedera mata, atau perubahan penglihatan yang tiba-tiba, jangan menunda untuk mencari pertolongan medis segera.
+<div align="center">
+  **VISIONA** · Vision Assessment & Eye Health Screening System  
+  Built with care by **Xodetech**
+</div>
