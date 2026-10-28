@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         platformName: 'Windows',
         title: 'Download VISIONA',
         fileName: 'VISIONA-Setup.exe',
-        fileSizeText: 'Tersedia (93,3 MB)',
+        fileSizeText: 'Tersedia (98,6 MB)',
         isLocalReady: true,
         desc: 'Paket installer mandiri (NSIS) untuk Windows 10/11 telah selesai dibangun dan teruji secara lokal. Tautan unduhan langsung aktif melalui GitHub Releases resmi.'
       },
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         platformName: 'Windows',
         title: 'Download VISIONA Portable',
         fileName: 'VISIONA-Portable.exe',
-        fileSizeText: 'Tersedia (90,2 MB)',
+        fileSizeText: 'Tersedia (95,2 MB)',
         isLocalReady: true,
         desc: 'Aplikasi portabel mandiri untuk Windows 10/11 (tanpa instalasi) telah selesai dibangun dan teruji secara lokal. Tautan unduhan langsung aktif melalui GitHub Releases resmi.'
       },
