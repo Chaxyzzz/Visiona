@@ -47,9 +47,9 @@ Aplikasi ini menggabungkan pemeriksaan penglihatan digital, penyajian hasil, riw
 
 <div align="center">
 
-<img src="assets/images/app-screenings-preview.png" alt="VISIONA — Eye Screening Interface" width="850">
+<img src="assets/images/visiona-dashboard.png" alt="VISIONA — Dashboard Utama" width="850">
 
-*Antarmuka modul skrining VISIONA.*
+*Dashboard utama aplikasi VISIONA.*
 
 </div>
 
@@ -233,7 +233,7 @@ Struktur repositori GitHub VISIONA:
 │   │   └── style.css
 │   ├── images/
 │   │   ├── visiona-logo-dark.png
-│   │   ├── app-screenings-preview.png
+│   │   ├── visiona-dashboard.png
 │   │   └── favicon.ico
 │   ├── js/
 │   │   └── main.js
