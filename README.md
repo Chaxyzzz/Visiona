@@ -1,94 +1,270 @@
 <div align="center">
-  <img src="gh-pages/assets/images/visiona-logo-dark.png" alt="Logo VISIONA" width="150" />
 
-VISIONA
-  Vision Assessment & Eye Health Screening System
+<img src="gh-pages/assets/images/visiona-logo-dark.png" alt="VISIONA Logo" width="120">
 
-  Aplikasi desktop untuk skrining mandiri kesehatan penglihatan.
+# VISIONA
 
-  Dikembangkan oleh Xodetech · Pencipta: Zakky Mubaraq
-  <br />
-  <img src="gh-pages/assets/images/app-screenings-preview.png" alt="Pratinjau antarmuka aplikasi VISIONA" width="820" />
+### Vision Assessment & Eye Health Screening System
+
+**A Desktop-Based Digital Eye Health Screening Application**
+
+Aplikasi desktop untuk skrining mandiri kesehatan mata, membantu pengguna mengenali kondisi penglihatan awal melalui serangkaian pemeriksaan digital, melihat hasil, serta meninjau riwayat skrining secara terstruktur.
+
+<br>
+
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS-2563EB?style=flat-square)](#platform-support)
+[![Application](https://img.shields.io/badge/Application-Desktop-475569?style=flat-square)](#)
+[![Developer](https://img.shields.io/badge/Developer-Xodetech-6D28D9?style=flat-square)](#credits)
+[![Purpose](https://img.shields.io/badge/Purpose-Eye%20Health%20Screening-0F766E?style=flat-square)](#medical-disclaimer)
+
+**Technology, thoughtfully built.**
+
 </div>
 
-Tentang VISIONA
-VISIONA adalah aplikasi desktop yang membantu pengguna melakukan skrining awal penglihatan secara mandiri, meninjau hasil, dan melihat riwayat pemeriksaan mereka. Antarmuka dirancang agar proses skrining terasa jelas, terarah, dan mudah diikuti.
-Catatan medis: VISIONA merupakan alat skrining awal, bukan alat diagnosis, surat keterangan medis, atau pengganti pemeriksaan oleh tenaga kesehatan profesional. Hasil skrining tidak memastikan ada atau tidaknya suatu penyakit mata.
+---
 
-Fitur utama
-- Delapan modul skrining untuk beberapa aspek penglihatan.
-- Hasil dan riwayat pribadi agar pengguna dapat meninjau pemeriksaan sebelumnya.
-- Ringkasan perkembangan berdasarkan data pemeriksaan yang tersimpan.
-- Penyimpanan lokal untuk data skrining pada komputer yang digunakan; data tidak otomatis tersinkron ke komputer lain.
-- Antarmuka desktop yang ditujukan untuk penggunaan personal.
-Modul skrining
-Modul	Tujuan umum
-Kuesioner Gejala	Mengumpulkan informasi awal mengenai gejala yang dirasakan.
-Ketajaman Visual	Menilai ketajaman penglihatan secara digital pada mata kanan dan kiri.
-Penglihatan Warna	Melakukan skrining awal kemampuan membedakan warna.
-Astigmatisme	Mengamati kemungkinan pola penglihatan yang berkaitan dengan astigmatisme.
-Sensitivitas Kontras	Menilai kemampuan mengenali perbedaan kontras.
-Lapang Pandang Sederhana	Melakukan pemeriksaan awal pada area penglihatan.
-Penglihatan Dekat	Melakukan skrining kemampuan melihat objek pada jarak dekat.
-Grid Amsler	Membantu mengamati distorsi pada pola kisi saat dilihat satu mata secara bergantian.
+## Overview
 
+VISIONA merupakan aplikasi desktop yang dikembangkan oleh **Xodetech** untuk menyediakan pengalaman skrining kesehatan mata secara mandiri melalui komputer.
 
-Hasil setiap modul dipengaruhi oleh kondisi penggunaan, termasuk layar, resolusi dan skala tampilan, pencahayaan, jarak pandang, serta kondisi pengguna.
-Alur aplikasi
-Diagram berikut menunjukkan alur umum penggunaan VISIONA.
+Aplikasi ini menggabungkan pemeriksaan penglihatan digital, penyajian hasil, riwayat pemeriksaan, dan pemantauan hasil sebelumnya dalam satu lingkungan aplikasi.
+
+### Key Features
+
+| Feature | Description |
+|---|---|
+| **Eye Screening** | Delapan modul pemeriksaan penglihatan digital. |
+| **Screening Results** | Menampilkan hasil dari pemeriksaan yang telah diselesaikan. |
+| **Screening History** | Membantu pengguna meninjau pemeriksaan sebelumnya. |
+| **Progress Monitoring** | Memudahkan perbandingan hasil skrining dari waktu ke waktu. |
+| **Personal Profile** | Pengelolaan profil dan preferensi pengguna. |
+| **Educational Resources** | Informasi mengenai kesehatan mata dan keterbatasan skrining digital. |
+| **Desktop Experience** | Antarmuka yang dirancang untuk penggunaan pada komputer. |
+
+---
+
+## Application Preview
+
+<div align="center">
+
+<img src="gh-pages/assets/images/app-screenings-preview.png" alt="VISIONA — Eye Screening Interface" width="850">
+
+*Antarmuka modul skrining VISIONA.*
+
+</div>
+
+---
+
+## Screening Modules
+
+VISIONA menyediakan delapan modul skrining penglihatan digital.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 01 — Symptom Questionnaire
+
+Kuesioner untuk membantu pengguna mengenali dan mencatat gejala terkait penglihatan.
+
+### 02 — Visual Acuity
+
+Pemeriksaan ketajaman penglihatan mata kanan dan kiri secara terpisah.
+
+### 03 — Color Vision
+
+Skrining kemampuan membedakan warna melalui pengujian visual.
+
+### 04 — Astigmatism
+
+Pemeriksaan awal untuk mengidentifikasi pola penglihatan yang mungkin berkaitan dengan astigmatisme.
+
+</td>
+<td width="50%" valign="top">
+
+### 05 — Contrast Sensitivity
+
+Skrining kemampuan membedakan objek berdasarkan perbedaan kontras.
+
+### 06 — Visual Field
+
+Pemeriksaan sederhana untuk mengeksplorasi persepsi area penglihatan.
+
+### 07 — Near Vision
+
+Skrining kemampuan melihat objek pada jarak dekat.
+
+### 08 — Amsler Grid
+
+Pemeriksaan menggunakan kisi Amsler untuk membantu mengenali perubahan persepsi garis atau pola visual.
+
+</td>
+</tr>
+</table>
+
+> **Important:** Seluruh modul merupakan alat skrining digital. Hasilnya bukan diagnosis medis dan tidak menggantikan pemeriksaan oleh dokter mata.
+
+---
+
+## Application Workflow
+
+Diagram berikut menggambarkan alur utama penggunaan VISIONA.
+
 ```mermaid
 flowchart TD
-    A([Buka VISIONA]) --> B{Autentikasi diperlukan?}
-    B -- Ya --> C[Masuk dengan akun yang didukung]
-    B -- Tidak --> D[Dashboard]
-    C --> D
-    D --> E[Pilih modul skrining]
-    E --> F[Baca petunjuk dan persiapan]
-    F --> G{Ada gejala tanda bahaya?}
-    G -- Ya --> H[Hentikan skrining dan cari bantuan medis]
-    G -- Tidak --> I[Lakukan skrining]
-    I --> J[Tinjau hasil skrining]
-    J --> K[Simpan hasil pada perangkat]
-    K --> L[Riwayat dan ringkasan perkembangan]
-    L --> D
-```
-Privasi dan penyimpanan data
-- Riwayat skrining dan preferensi lokal disimpan pada perangkat tempat aplikasi digunakan.
-- Data lokal tidak otomatis tersedia di komputer lain.
-- Jangan menggunakan perangkat bersama tanpa mengamankan sesi dan akses ke profil pribadi.
-- Untuk ketentuan lengkap, baca [Kebijakan Privasi](gh-pages/privacy.html) dan [Syarat & Ketentuan](gh-pages/terms.html).
-Detail implementasi autentikasi dan penyimpanan mengikuti versi aplikasi yang didistribusikan. Jangan memasukkan kata sandi Google ke dalam aplikasi atau membagikan data kesehatan pribadi kepada pihak lain.
-Teknologi
-VISIONA dikembangkan sebagai aplikasi desktop dengan antarmuka web modern dan runtime aplikasi berbasis Electron. Komponen backend, runtime, serta penyimpanan yang dibundel dapat berbeda sesuai paket rilis. Distribusi final harus diuji sebagai aplikasi mandiri dan tidak boleh mengharuskan pengguna akhir memasang Laragon atau mengonfigurasi basis data secara manual.
-Unduhan
-Periksa halaman GitHub Releases untuk melihat paket yang benar-benar telah diterbitkan.
-- Windows: gunakan installer atau paket portabel yang tercantum pada rilis resmi.
-- macOS: paket DMG untuk Intel dan Apple Silicon hanya dapat dianggap tersedia setelah berkas rilis dipublikasikan dan diuji pada perangkat/runner macOS yang sesuai.
-Jika belum ada berkas rilis untuk platform tertentu, berarti paket tersebut belum tersedia untuk diunduh.
-Menjalankan website publik secara lokal
-Website informasi VISIONA berada di direktori gh-pages/ dan dapat dibuka langsung melalui index.html.
-gh-pages/
-├── index.html
-├── privacy.html
-├── terms.html
-└── assets/
-    ├── css/style.css
-    ├── images/
-    └── js/main.js
-Untuk mengujinya menggunakan server PHP lokal (opsional):
-cd C:\laragon\www\visiona\gh-pages
-php -S localhost:8080
-Kemudian buka http://localhost:8080 pada browser.
-Distribusi dan situs resmi
-- Repositori: Chaxyzzz/Visiona
-- Releases: Unduhan aplikasi
-- Website GitHub Pages: Buka website VISIONA
-Status tautan publik dan aset unduhan mengikuti konfigurasi serta rilis terbaru di GitHub.
-Batasan penggunaan
-Skrining digital tidak menggantikan pemeriksaan mata secara langsung. Akurasi dapat dipengaruhi oleh ukuran dan resolusi layar, pembesaran tampilan, kalibrasi warna, pencahayaan, jarak pengguna dari layar, serta cara pengujian dilakukan.
+    A([Start VISIONA]) --> B[Authentication, if required]
+    B --> C[Dashboard]
+    C --> D[Select Screening Module]
 
-Apabila mengalami kehilangan penglihatan mendadak, nyeri mata berat, cedera mata, atau perubahan penglihatan yang tiba-tiba, jangan menunda untuk mencari pertolongan medis segera.
+    D --> E1[Symptom Questionnaire]
+    D --> E2[Visual Acuity]
+    D --> E3[Color Vision]
+    D --> E4[Astigmatism]
+    D --> E5[Contrast Sensitivity]
+    D --> E6[Visual Field]
+    D --> E7[Near Vision]
+    D --> E8[Amsler Grid]
+
+    E1 --> F[Complete Screening]
+    E2 --> F
+    E3 --> F
+    E4 --> F
+    E5 --> F
+    E6 --> F
+    E7 --> F
+    E8 --> F
+
+    F --> G[View Screening Results]
+    G --> H[Save Results Locally]
+    H --> I[Screening History]
+    I --> C
+
+    style A fill:#2563eb,color:#ffffff,stroke:#2563eb
+    style C fill:#eff6ff,color:#1d4ed8,stroke:#93c5fd
+    style F fill:#eff6ff,color:#1d4ed8,stroke:#93c5fd
+    style G fill:#f0fdf4,color:#166534,stroke:#86efac
+    style H fill:#f8fafc,color:#334155,stroke:#cbd5e1
+```
+
+*Diagram ini merupakan gambaran konseptual alur aplikasi. Autentikasi, penyimpanan, dan navigasi mengikuti implementasi aktual pada versi aplikasi yang digunakan.*
+
+---
+
+## Platform Support
+
+| Platform | Availability |
+|---|---|
+| **Windows 10 / 11 — 64-bit** | Ikuti ketersediaan paket installer pada bagian distribusi. |
+| **macOS — Intel & Apple Silicon** | Paket harus tersedia dan tervalidasi sebelum dapat diunduh. |
+| **Linux** | Tidak termasuk platform target resmi. |
+
+### Download
+
+Kunjungi halaman distribusi resmi VISIONA untuk memeriksa paket yang tersedia.
+
+**Website:** `https://chaxyzzz.github.io/Visiona/`
+
+> Ketersediaan unduhan bergantung pada paket rilis yang benar-benar telah dipublikasikan. Jangan menganggap suatu platform tersedia hanya karena tercantum pada tabel.
+
+---
+
+## Privacy & Data Handling
+
+VISIONA dirancang sebagai aplikasi desktop mandiri dengan fokus pada data pribadi pengguna.
+
+Prinsip pengelolaan data yang dituju meliputi:
+
+- Hasil skrining dan riwayat pemeriksaan disimpan secara lokal pada komputer pengguna.
+- Data setiap pengguna harus dibatasi sesuai mekanisme autentikasi dan kepemilikan data yang diterapkan.
+- Informasi akun digunakan sesuai kebutuhan autentikasi aplikasi.
+- Pengguna perlu memahami lokasi penyimpanan data sebelum menghapus aplikasi atau memindahkan komputer.
+
+Baca dokumen resmi berikut untuk mengetahui kebijakan dan ketentuan yang berlaku:
+
+- [Privacy Policy](gh-pages/privacy.html)
+- [Terms & Conditions](gh-pages/terms.html)
+
+*Penjelasan ini merangkum rancangan privasi aplikasi. Detail penyimpanan dan pemrosesan data harus mengikuti implementasi aktual serta isi dokumen kebijakan yang dipublikasikan.*
+
+---
+
+## Technology
+
+VISIONA menggunakan teknologi aplikasi desktop dan komponen pendukung sesuai implementasi proyek.
+
+| Component | Technology |
+|---|---|
+| Desktop runtime | Electron |
+| Application interface | HTML, CSS, JavaScript |
+| Backend | PHP |
+| Local database | SQLite |
+| Packaging | Electron Builder |
+
+*Daftar ini menjelaskan teknologi yang digunakan dalam rancangan proyek. Konfigurasi dan versi dependensi dapat berbeda menurut build.*
+
+---
+
+## Medical Disclaimer
+
+VISIONA dikembangkan untuk mendukung skrining awal kesehatan mata, bukan untuk menetapkan diagnosis atau menggantikan konsultasi medis.
+
+- Hasil skrining tidak memastikan ada atau tidaknya suatu penyakit mata.
+- Akurasi pemeriksaan digital dapat dipengaruhi ukuran dan resolusi layar, skala tampilan, pencahayaan, jarak pengamatan, serta kondisi perangkat.
+- Hasil normal tidak menjamin bahwa mata sepenuhnya sehat.
+- Keluhan yang menetap atau hasil yang mengkhawatirkan perlu dikonsultasikan kepada tenaga medis profesional.
+- Kehilangan penglihatan secara mendadak, nyeri mata berat, atau perubahan penglihatan mendadak memerlukan pertolongan medis segera.
+
+**Gunakan VISIONA sebagai sarana skrining dan edukasi, bukan sebagai pengganti pemeriksaan profesional.**
+
+---
+
+## Project Structure
+
+Struktur ringkas direktori website publik VISIONA:
+
+```text
+visiona/
+├── gh-pages/
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   ├── images/
+│   │   │   ├── visiona-logo-dark.png
+│   │   │   ├── app-screenings-preview.png
+│   │   │   └── favicon.ico
+│   │   └── js/
+│   │       └── main.js
+│   ├── index.html
+│   ├── privacy.html
+│   ├── terms.html
+│   └── README.md
+│
+├── dist/
+│   └── Application release artifacts
+│
+└── README.md
+```
+
+*Struktur di atas merupakan ilustrasi. Pastikan lokasi file sesuai dengan struktur repositori yang sebenarnya.*
+
+---
+
+## Credits
+
 <div align="center">
-  **VISIONA** · Vision Assessment & Eye Health Screening System  
-  Built with care by **Xodetech**
+
+**VISIONA**
+
+Vision Assessment & Eye Health Screening System
+
+Developed by **Xodetech**
+
+Creator: **Zakky Mubaraq**
+
+[Official Website](https://chaxyzzz.github.io/Visiona/) · [GitHub Repository](https://github.com/Chaxyzzz/Visiona)
+
+<br>
+
+*Technology, thoughtfully built.*
+
 </div>
