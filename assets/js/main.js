@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Akun dan repositori GitHub resmi
     githubOwner: 'Chaxyzzz', 
     githubRepo: 'Visiona',
-    releaseTag: 'v1.0.0',
+    releaseTag: 'Visiona',
     // Status rilis daring resmi
     isPublished: true,
     platforms: {
