@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Chaxyzzz/Visiona/main/assets/images/visiona-logo-dark.png" alt="VISIONA Logo" width="140">
+<img src="assets/images/visiona-logo-dark.png" alt="VISIONA Logo" width="140">
 
 # VISIONA
 
@@ -47,7 +47,7 @@ Aplikasi ini menggabungkan pemeriksaan penglihatan digital, penyajian hasil, riw
 
 <div align="center">
 
-<img src="gh-pages/assets/images/app-screenings-preview.png" alt="VISIONA — Eye Screening Interface" width="850">
+<img src="assets/images/app-screenings-preview.png" alt="VISIONA — Eye Screening Interface" width="850">
 
 *Antarmuka modul skrining VISIONA.*
 
@@ -160,9 +160,10 @@ flowchart TD
 
 ### Download
 
-Kunjungi halaman distribusi resmi VISIONA untuk memeriksa paket yang tersedia.
+Kunjungi halaman distribusi resmi VISIONA atau portal rilis untuk memeriksa dan mengunduh paket yang tersedia:
 
-**Website:** `https://chaxyzzz.github.io/Visiona/`
+- **Website Resmi:** [https://chaxyzzz.github.io/Visiona/#unduh](https://chaxyzzz.github.io/Visiona/#unduh)
+- **GitHub Releases:** [https://github.com/Chaxyzzz/Visiona/releases](https://github.com/Chaxyzzz/Visiona/releases)
 
 > Ketersediaan unduhan bergantung pada paket rilis yang benar-benar telah dipublikasikan. Jangan menganggap suatu platform tersedia hanya karena tercantum pada tabel.
 
@@ -181,8 +182,8 @@ Prinsip pengelolaan data yang dituju meliputi:
 
 Baca dokumen resmi berikut untuk mengetahui kebijakan dan ketentuan yang berlaku:
 
-- [Privacy Policy](gh-pages/privacy.html)
-- [Terms & Conditions](gh-pages/terms.html)
+- [Privacy Policy](https://chaxyzzz.github.io/Visiona/privacy.html)
+- [Terms & Conditions](https://chaxyzzz.github.io/Visiona/terms.html)
 
 *Penjelasan ini merangkum rancangan privasi aplikasi. Detail penyimpanan dan pemrosesan data harus mengikuti implementasi aktual serta isi dokumen kebijakan yang dipublikasikan.*
 
@@ -220,32 +221,31 @@ VISIONA dikembangkan untuk mendukung skrining awal kesehatan mata, bukan untuk m
 
 ## Project Structure
 
-Struktur ringkas direktori website publik VISIONA:
+Struktur repositori GitHub VISIONA:
 
 ```text
-visiona/
-├── gh-pages/
-│   ├── assets/
-│   │   ├── css/
-│   │   │   └── style.css
-│   │   ├── images/
-│   │   │   ├── visiona-logo-dark.png
-│   │   │   ├── app-screenings-preview.png
-│   │   │   └── favicon.ico
-│   │   └── js/
-│   │       └── main.js
-│   ├── index.html
-│   ├── privacy.html
-│   ├── terms.html
-│   └── README.md
-│
-├── dist/
-│   └── Application release artifacts
-│
+.
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── images/
+│   │   ├── visiona-logo-dark.png
+│   │   ├── app-screenings-preview.png
+│   │   └── favicon.ico
+│   ├── js/
+│   │   └── main.js
+│   └── video/
+│       └── intro-visiona.mp4
+├── index.html
+├── privacy.html
+├── terms.html
 └── README.md
 ```
 
-*Struktur di atas merupakan ilustrasi. Pastikan lokasi file sesuai dengan struktur repositori yang sebenarnya.*
+*Repositori ini memuat berkas website resmi, materi edukasi, dokumen kebijakan, serta alur distribusi rilis VISIONA.*
 
 ---
 
