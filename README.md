@@ -63,38 +63,38 @@ VISIONA menyediakan delapan modul skrining penglihatan digital.
 <tr>
 <td width="50%" valign="top">
 
-### 01 — Symptom Questionnaire
+### 01  Symptom Questionnaire
 
 Kuesioner untuk membantu pengguna mengenali dan mencatat gejala terkait penglihatan.
 
-### 02 — Visual Acuity
+### 02  Visual Acuity
 
 Pemeriksaan ketajaman penglihatan mata kanan dan kiri secara terpisah.
 
-### 03 — Color Vision
+### 03  Color Vision
 
 Skrining kemampuan membedakan warna melalui pengujian visual.
 
-### 04 — Astigmatism
+### 04  Astigmatism
 
 Pemeriksaan awal untuk mengidentifikasi pola penglihatan yang mungkin berkaitan dengan astigmatisme.
 
 </td>
 <td width="50%" valign="top">
 
-### 05 — Contrast Sensitivity
+### 05  Contrast Sensitivity
 
 Skrining kemampuan membedakan objek berdasarkan perbedaan kontras.
 
-### 06 — Visual Field
+### 06  Visual Field
 
 Pemeriksaan sederhana untuk mengeksplorasi persepsi area penglihatan.
 
-### 07 — Near Vision
+### 07  Near Vision
 
 Skrining kemampuan melihat objek pada jarak dekat.
 
-### 08 — Amsler Grid
+### 08  Amsler Grid
 
 Pemeriksaan menggunakan kisi Amsler untuk membantu mengenali perubahan persepsi garis atau pola visual.
 
@@ -154,8 +154,8 @@ flowchart TD
 
 | Platform | Availability |
 |---|---|
-| **Windows 10 / 11 — 64-bit** | Ikuti ketersediaan paket installer pada bagian distribusi. |
-| **macOS — Intel & Apple Silicon** | Paket harus tersedia dan tervalidasi sebelum dapat diunduh. |
+| **Windows 10 / 11 - 64-bit** | Ikuti ketersediaan paket installer pada bagian distribusi. |
+| **macOS - Intel & Apple Silicon** | Paket harus tersedia dan tervalidasi sebelum dapat diunduh. |
 | **Linux** | Tidak termasuk platform target resmi. |
 
 ### Download
