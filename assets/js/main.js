@@ -153,5 +153,47 @@ document.addEventListener('DOMContentLoaded', () => {
       // Jika tautan rilis valid tersedia (Windows installer & portabel), navigasi dilanjutkan
     });
   });
+
+  // 4. Checksum Copy to Clipboard Handler
+  const copyButtons = document.querySelectorAll('.btn-copy-checksum');
+  copyButtons.forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const textToCopy = btn.getAttribute('data-clipboard');
+      if (!textToCopy) return;
+
+      const copyIcon = btn.querySelector('.icon-copy');
+      const checkIcon = btn.querySelector('.icon-check');
+      const label = btn.querySelector('.copy-label');
+
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(textToCopy);
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = textToCopy;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        }
+
+        if (copyIcon) copyIcon.style.display = 'none';
+        if (checkIcon) checkIcon.style.display = 'inline-block';
+        if (label) label.textContent = 'Tersalin!';
+        btn.classList.add('is-copied');
+
+        setTimeout(() => {
+          if (copyIcon) copyIcon.style.display = 'inline-block';
+          if (checkIcon) checkIcon.style.display = 'none';
+          if (label) label.textContent = 'Salin SHA-256';
+          btn.classList.remove('is-copied');
+        }, 2200);
+      } catch (err) {
+        console.warn('[VISIONA] Gagal menyalin ke clipboard:', err);
+      }
+    });
+  });
 });
 
