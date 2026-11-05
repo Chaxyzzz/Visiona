@@ -797,17 +797,7 @@
     }
 
     .security-editorial-header {
-      margin-bottom: 2.25rem;
-    }
-
-    .security-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--color-primary);
-      display: inline-block;
-      margin-bottom: 0.45rem;
+      margin-bottom: 2rem;
     }
 
     .security-editorial-title {
@@ -860,28 +850,11 @@
       min-width: 0;
     }
 
-    .checksum-file-header {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      margin-bottom: 0.35rem;
-      flex-wrap: wrap;
-    }
-
     .checksum-file-name {
       font-size: 0.95rem;
       font-weight: 700;
       color: var(--color-text-main);
-    }
-
-    .checksum-file-badge {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--color-text-muted);
-      background: var(--color-bg-soft);
-      border: 1px solid var(--color-border-subtle);
-      border-radius: 5px;
-      padding: 0.125rem 0.45rem;
+      margin-bottom: 0.35rem;
     }
 
     .checksum-hash-line {
@@ -933,16 +906,16 @@
     /* C. Informasi Peringatan Unduhan */
     .security-advisory-block {
       border-top: 1px solid var(--color-border-subtle);
-      padding-top: 1.75rem;
-      margin-bottom: 2rem;
+      padding-top: 2rem;
+      margin-bottom: 2.25rem;
     }
 
     .security-advisory-title {
       font-family: var(--font-display);
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--color-text-main);
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.6rem;
       letter-spacing: -0.01em;
     }
 
@@ -954,28 +927,38 @@
       max-width: 860px;
     }
 
-    /* D. Panduan Keamanan (3-Column Grid) */
+    /* D. Panduan Keamanan (3-Column Grid dengan Jarak Lega & Pemisah Halus) */
     .security-principles-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.75rem;
-      padding-top: 1.75rem;
+      gap: 2.25rem;
+      padding-top: 2.25rem;
       border-top: 1px solid var(--color-border-subtle);
+    }
+
+    .security-principle-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .security-principle-item:not(:first-child) {
+      border-left: 1px solid var(--color-border-subtle);
+      padding-left: 2rem;
     }
 
     .security-principle-title {
       font-family: var(--font-display);
-      font-size: 0.875rem;
+      font-size: 0.925rem;
       font-weight: 700;
       color: var(--color-text-main);
-      margin: 0 0 0.35rem;
+      margin: 0 0 0.45rem;
       letter-spacing: -0.01em;
     }
 
     .security-principle-desc {
-      font-size: 0.825rem;
+      font-size: 0.85rem;
       color: var(--color-text-body);
-      line-height: 1.55;
+      line-height: 1.6;
       margin: 0;
     }
 
@@ -1006,7 +989,13 @@
       }
       .security-principles-grid {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: 1.5rem;
+      }
+      .security-principle-item:not(:first-child) {
+        border-left: none;
+        border-top: 1px solid var(--color-border-subtle);
+        padding-left: 0;
+        padding-top: 1.5rem;
       }
     }
 
@@ -1938,7 +1927,6 @@
         <div class="distribution-security-section reveal-on-scroll">
           <!-- A. Header Section -->
           <div class="security-editorial-header">
-            <span class="security-eyebrow">KEAMANAN DISTRIBUSI</span>
             <h3 class="security-editorial-title">Integritas Berkas VISIONA</h3>
             <p class="security-editorial-lead">
               Pastikan berkas yang Anda unduh sesuai dengan rilis resmi VISIONA melalui verifikasi checksum SHA-256.
@@ -1950,10 +1938,7 @@
             <!-- Baris 1: Setup -->
             <div class="checksum-row">
               <div class="checksum-col-info">
-                <div class="checksum-file-header">
-                  <span class="checksum-file-name">VISIONA-Setup.exe</span>
-                  <span class="checksum-file-badge">Installer Windows</span>
-                </div>
+                <div class="checksum-file-name">VISIONA-Setup.exe</div>
                 <div class="checksum-hash-line">
                   <code class="checksum-hash-text">3c1bcf056b82622d699acccc37d79d2b87ade98468a13574b6cddc9f08222716</code>
                 </div>
@@ -1970,10 +1955,7 @@
             <!-- Baris 2: Portable -->
             <div class="checksum-row">
               <div class="checksum-col-info">
-                <div class="checksum-file-header">
-                  <span class="checksum-file-name">VISIONA-Portable.exe</span>
-                  <span class="checksum-file-badge">Portable Windows</span>
-                </div>
+                <div class="checksum-file-name">VISIONA-Portable.exe</div>
                 <div class="checksum-hash-line">
                   <code class="checksum-hash-text">ca604cb10267391b401ec5f56fb464166ed450f2f6f68336262c1ae6646902ea</code>
                 </div>
