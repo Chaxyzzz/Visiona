@@ -787,130 +787,135 @@
       margin-top: 0.35rem;
     }
 
-    /* Download Security & Checksum Panel */
-    .download-security-panel {
-      background: #ffffff;
-      border: 1px solid var(--color-border-clean);
-      border-radius: var(--radius-inner-card);
-      padding: 2.75rem 2.5rem;
+    /* ======================================================================
+       Integritas & Keamanan Distribusi (Minimal Editorial Layout)
+       ====================================================================== */
+    .distribution-security-section {
       max-width: 920px;
-      margin: 3.5rem auto 0;
-      box-shadow: 0 10px 30px -10px rgba(11, 12, 30, 0.04);
+      margin: 4.5rem auto 0;
+      padding: 0 1rem;
     }
 
-    .security-panel-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 0.85rem;
+    .security-editorial-header {
+      margin-bottom: 2.25rem;
     }
 
-    .security-badge-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: var(--color-primary-subtle);
-      color: var(--color-primary);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .security-panel-tag {
+    .security-eyebrow {
       font-size: 0.75rem;
       font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
       color: var(--color-primary);
-      display: block;
-      margin-bottom: 0.2rem;
+      display: inline-block;
+      margin-bottom: 0.45rem;
     }
 
-    .security-header-text h3 {
+    .security-editorial-title {
       font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      font-weight: 800;
       color: var(--color-text-main);
-      margin: 0;
-      letter-spacing: -0.015em;
+      margin: 0 0 0.6rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
     }
 
-    .security-intro-text {
-      font-size: 0.925rem;
+    .security-editorial-lead {
+      font-size: 0.95rem;
       color: var(--color-text-body);
-      line-height: 1.65;
-      margin-bottom: 1.75rem;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 680px;
     }
 
-    .security-checksum-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-
-    .checksum-item {
-      background: var(--color-bg-soft);
-      border: 1px solid var(--color-border-subtle);
+    /* B. Checksum List */
+    .checksum-editorial-table {
+      background: #ffffff;
+      border: 1px solid var(--color-border-clean);
       border-radius: 14px;
-      padding: 1.15rem 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: border-color var(--transition-fast);
+      box-shadow: 0 2px 12px -2px rgba(11, 12, 30, 0.03);
+      margin-bottom: 2.5rem;
+      overflow: hidden;
     }
 
-    .checksum-item:hover {
-      border-color: var(--color-primary-border);
-    }
-
-    .checksum-item-header {
+    .checksum-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
+      gap: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      transition: background-color var(--transition-fast, 150ms ease);
+    }
+
+    .checksum-row:hover {
+      background-color: var(--color-bg-soft);
+    }
+
+    .checksum-row:not(:last-child) {
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .checksum-col-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .checksum-file-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.35rem;
       flex-wrap: wrap;
     }
 
-    .checksum-item-title {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.875rem;
+    .checksum-file-name {
+      font-size: 0.95rem;
+      font-weight: 700;
       color: var(--color-text-main);
     }
 
-    .checksum-file-icon {
-      color: var(--color-primary);
-      display: inline-flex;
-      align-items: center;
+    .checksum-file-badge {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      background: var(--color-bg-soft);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: 5px;
+      padding: 0.125rem 0.45rem;
     }
 
-    .checksum-type-tag {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--color-text-muted);
-      background: #ffffff;
-      border: 1px solid var(--color-border-clean);
-      border-radius: 6px;
-      padding: 0.15rem 0.45rem;
-      margin-left: 0.25rem;
+    .checksum-hash-line {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .checksum-hash-text {
+      font-family: var(--font-mono, ui-monospace, monospace);
+      font-size: 0.8125rem;
+      color: #334155;
+      word-break: break-all;
+      user-select: all;
+      line-height: 1.45;
+    }
+
+    .checksum-col-action {
+      flex-shrink: 0;
     }
 
     .btn-copy-checksum {
       background: #ffffff;
       border: 1px solid var(--color-border-clean);
       color: var(--color-text-body);
-      font-size: 0.75rem;
+      font-size: 0.775rem;
       font-weight: 600;
-      padding: 0.35rem 0.75rem;
-      border-radius: 8px;
+      padding: 0.45rem 0.85rem;
+      border-radius: 7px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      transition: all var(--transition-fast);
+      gap: 0.35rem;
+      white-space: nowrap;
+      transition: all var(--transition-fast, 150ms ease);
     }
 
     .btn-copy-checksum:hover {
@@ -925,129 +930,83 @@
       background: #ecfdf5;
     }
 
-    .checksum-code-wrap {
-      background: #ffffff;
-      border: 1px solid var(--color-border-clean);
-      border-radius: 8px;
-      padding: 0.55rem 0.75rem;
-    }
-
-    .checksum-code-wrap code {
-      font-family: var(--font-mono, monospace);
-      font-size: 0.75rem;
-      color: #334155;
-      word-break: break-all;
-      display: block;
-      line-height: 1.45;
-      user-select: all;
-    }
-
-    .security-guidance-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+    /* C. Informasi Peringatan Unduhan */
+    .security-advisory-block {
       border-top: 1px solid var(--color-border-subtle);
-      padding-top: 2rem;
+      padding-top: 1.75rem;
+      margin-bottom: 2rem;
     }
 
-    .guidance-card {
-      background: var(--color-bg-soft);
-      border: 1px solid var(--color-border-subtle);
-      border-radius: 14px;
-      padding: 1.35rem 1.4rem;
-    }
-
-    .guidance-card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .guidance-num {
-      font-family: var(--font-mono, monospace);
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      background: var(--color-primary-subtle);
-      border-radius: 6px;
-      padding: 0.2rem 0.45rem;
-      display: inline-block;
-    }
-
-    .guidance-card-header h4 {
+    .security-advisory-title {
       font-family: var(--font-display);
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--color-text-main);
-      margin: 0;
+      margin: 0 0 0.5rem;
       letter-spacing: -0.01em;
     }
 
-    .guidance-card p {
-      font-size: 0.85rem;
+    .security-advisory-text {
+      font-size: 0.875rem;
       color: var(--color-text-body);
-      line-height: 1.6;
-      margin-bottom: 0.75rem;
-    }
-
-    .guidance-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .guidance-note {
-      font-size: 0.8125rem !important;
-      color: var(--color-text-muted) !important;
-      background: #ffffff;
-      border-left: 3px solid var(--color-primary);
-      padding: 0.65rem 0.85rem;
-      border-radius: 0 8px 8px 0;
-      line-height: 1.55;
-    }
-
-    .guidance-list {
-      list-style: none;
-      padding: 0;
+      line-height: 1.65;
       margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
+      max-width: 860px;
     }
 
-    .guidance-list li {
-      font-size: 0.835rem;
+    /* D. Panduan Keamanan (3-Column Grid) */
+    .security-principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--color-border-subtle);
+    }
+
+    .security-principle-title {
+      font-family: var(--font-display);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.01em;
+    }
+
+    .security-principle-desc {
+      font-size: 0.825rem;
       color: var(--color-text-body);
       line-height: 1.55;
-      position: relative;
-      padding-left: 1rem;
+      margin: 0;
     }
 
-    .guidance-list li::before {
-      content: "•";
-      color: var(--color-primary);
-      position: absolute;
-      left: 0;
-      font-weight: 800;
-    }
-
-    .guidance-list code {
-      font-family: var(--font-mono, monospace);
-      font-size: 0.75rem;
-      background: #ffffff;
-      border: 1px solid var(--color-border-clean);
-      border-radius: 4px;
-      padding: 0.1rem 0.35rem;
-      color: #334155;
-    }
-
-    @media (max-width: 900px) {
-      .security-checksum-grid,
-      .security-guidance-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) {
+      .distribution-security-section {
+        margin-top: 3.5rem;
+        padding: 0;
       }
-      .download-security-panel {
-        padding: 2rem 1.5rem;
-        margin-top: 2.5rem;
+      .security-editorial-title {
+        font-size: 1.3rem;
+      }
+      .checksum-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.85rem;
+        padding: 1.15rem 1rem;
+      }
+      .checksum-col-action {
+        width: 100%;
+      }
+      .btn-copy-checksum {
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem 0.85rem;
+      }
+      .checksum-hash-text {
+        font-size: 0.725rem;
+      }
+      .security-principles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
       }
     }
 
@@ -1973,104 +1932,101 @@
           </div>
         </div>
 
-        <!-- Security & Checksum Verification Panel -->
-        <div class="download-security-panel reveal-on-scroll">
-          <div class="security-panel-header">
-            <div class="security-badge-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <div class="security-header-text">
-              <span class="security-panel-tag">Integritas &amp; Keamanan Distribusi</span>
-              <h3>Verifikasi Berkas &amp; Informasi Peringatan Unduhan</h3>
-            </div>
+        <!-- ======================================================================
+             Integritas & Keamanan Distribusi (Minimal Editorial Layout)
+             ====================================================================== -->
+        <div class="distribution-security-section reveal-on-scroll">
+          <!-- A. Header Section -->
+          <div class="security-editorial-header">
+            <span class="security-eyebrow">KEAMANAN DISTRIBUSI</span>
+            <h3 class="security-editorial-title">Integritas Berkas VISIONA</h3>
+            <p class="security-editorial-lead">
+              Pastikan berkas yang Anda unduh sesuai dengan rilis resmi VISIONA melalui verifikasi checksum SHA-256.
+            </p>
           </div>
 
-          <p class="security-intro-text">
-            Aplikasi desktop VISIONA didistribusikan secara mandiri dan transparan melalui repositori resmi GitHub. Gunakan checksum SHA-256 resmi di bawah ini untuk memverifikasi integritas berkas yang Anda unduh, serta pelajari konteks peringatan keamanan sistem operasi.
-          </p>
-
-          <!-- Checksum Grid -->
-          <div class="security-checksum-grid">
-            <!-- Setup Checksum -->
-            <div class="checksum-item">
-              <div class="checksum-item-header">
-                <div class="checksum-item-title">
-                  <span class="checksum-file-icon" aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  </span>
-                  <strong>VISIONA-Setup.exe</strong>
-                  <span class="checksum-type-tag">Installer NSIS</span>
+          <!-- B. Daftar Berkas dan Checksum -->
+          <div class="checksum-editorial-table">
+            <!-- Baris 1: Setup -->
+            <div class="checksum-row">
+              <div class="checksum-col-info">
+                <div class="checksum-file-header">
+                  <span class="checksum-file-name">VISIONA-Setup.exe</span>
+                  <span class="checksum-file-badge">Installer Windows</span>
                 </div>
+                <div class="checksum-hash-line">
+                  <code class="checksum-hash-text">3c1bcf056b82622d699acccc37d79d2b87ade98468a13574b6cddc9f08222716</code>
+                </div>
+              </div>
+              <div class="checksum-col-action">
                 <button type="button" class="btn-copy-checksum" data-clipboard="3c1bcf056b82622d699acccc37d79d2b87ade98468a13574b6cddc9f08222716" aria-label="Salin checksum SHA-256 VISIONA-Setup.exe">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-copy" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-check" aria-hidden="true" style="display: none;"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span class="copy-label">Salin SHA-256</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-copy" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-check" aria-hidden="true" style="display: none;"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="copy-label">Salin Hash</span>
                 </button>
-              </div>
-              <div class="checksum-code-wrap">
-                <code>3c1bcf056b82622d699acccc37d79d2b87ade98468a13574b6cddc9f08222716</code>
               </div>
             </div>
 
-            <!-- Portable Checksum -->
-            <div class="checksum-item">
-              <div class="checksum-item-header">
-                <div class="checksum-item-title">
-                  <span class="checksum-file-icon" aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  </span>
-                  <strong>VISIONA-Portable.exe</strong>
-                  <span class="checksum-type-tag">Versi Portabel</span>
+            <!-- Baris 2: Portable -->
+            <div class="checksum-row">
+              <div class="checksum-col-info">
+                <div class="checksum-file-header">
+                  <span class="checksum-file-name">VISIONA-Portable.exe</span>
+                  <span class="checksum-file-badge">Portable Windows</span>
                 </div>
-                <button type="button" class="btn-copy-checksum" data-clipboard="ca604cb10267391b401ec5f56fb464166ed450f2f6f68336262c1ae6646902ea" aria-label="Salin checksum SHA-256 VISIONA-Portable.exe">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-copy" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-check" aria-hidden="true" style="display: none;"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span class="copy-label">Salin SHA-256</span>
-                </button>
+                <div class="checksum-hash-line">
+                  <code class="checksum-hash-text">ca604cb10267391b401ec5f56fb464166ed450f2f6f68336262c1ae6646902ea</code>
+                </div>
               </div>
-              <div class="checksum-code-wrap">
-                <code>ca604cb10267391b401ec5f56fb464166ed450f2f6f68336262c1ae6646902ea</code>
+              <div class="checksum-col-action">
+                <button type="button" class="btn-copy-checksum" data-clipboard="ca604cb10267391b401ec5f56fb464166ed450f2f6f68336262c1ae6646902ea" aria-label="Salin checksum SHA-256 VISIONA-Portable.exe">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-copy" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-check" aria-hidden="true" style="display: none;"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="copy-label">Salin Hash</span>
+                </button>
               </div>
             </div>
           </div>
 
-          <!-- Guidance Grid -->
-          <div class="security-guidance-grid">
-            <div class="guidance-card">
-              <div class="guidance-card-header">
-                <span class="guidance-num">01</span>
-                <h4>Peringatan Reputasi &amp; Tanda Tangan Digital</h4>
-              </div>
-              <p>
-                Aplikasi ini dikembangkan secara independen dan saat ini belum menyertakan sertifikat penandatanganan kode digital komersial (Authenticode) maupun riwayat unduhan massal di internet. Oleh karena itu, browser (seperti Google Chrome atau Microsoft Edge) serta Windows SmartScreen dapat memunculkan peringatan reputasi penerbit tidak dikenal (<em>Unknown Publisher</em>) atau tanda seru saat unduhan selesai.
-              </p>
-              <p class="guidance-note">
-                Peringatan reputasi adalah mekanisme pencegahan standar sistem operasi terhadap biner baru yang belum dikenal secara global; peringatan ini bukan bukti otomatis bahwa berkas berbahaya, dan juga bukan jaminan bahwa berkas bebas dari risiko.
-              </p>
-            </div>
+          <!-- C. Informasi Peringatan Keamanan -->
+          <div class="security-advisory-block">
+            <h4 class="security-advisory-title">Tentang Peringatan Unduhan</h4>
+            <p class="security-advisory-text">
+              VISIONA dikembangkan secara independen dan belum menggunakan sertifikat penandatanganan kode digital komersial. Karena itu, browser atau Windows SmartScreen mungkin menampilkan peringatan bahwa penerbit belum dikenal. Peringatan tersebut bukan bukti otomatis bahwa berkas berbahaya maupun jaminan bahwa berkas bebas dari risiko.
+            </p>
+          </div>
 
-            <div class="guidance-card">
-              <div class="guidance-card-header">
-                <span class="guidance-num">02</span>
-                <h4>Panduan Tindakan &amp; Batasan Keamanan</h4>
-              </div>
-              <ul class="guidance-list">
-                <li>
-                  <strong>Periksa Sumber Unduhan:</strong> Pastikan tautan berkas selalu berasal langsung dari repositori resmi <code>github.com/Chaxyzzz/Visiona</code>.
-                </li>
-                <li>
-                  <strong>Teliti Pesan Peringatan:</strong> Jika browser menandai unduhan, baca pesan dan nama peringatan secara teliti sebelum mengambil keputusan.
-                </li>
-                <li>
-                  <strong>Verifikasi Integritas SHA-256:</strong> Pengguna dapat mencocokkan hash berkas menggunakan PowerShell dengan perintah <code>Get-FileHash &lt;nama-file&gt;</code> untuk memastikan biner identik dengan rilis resmi.
-                </li>
-                <li>
-                  <strong>Jangan Nonaktifkan Antivirus:</strong> Jika perangkat lunak antivirus Anda mendeteksi ancaman tertentu, <em>jangan pernah menonaktifkan antivirus, Windows Defender, atau SmartScreen</em>, dan jangan mengabaikan deteksi tersebut. Beberapa kebijakan keamanan institusi atau sistem (seperti Smart App Control) dapat memblokir eksekusi aplikasi sepenuhnya.
-                </li>
-              </ul>
+          <!-- D. Panduan Keamanan -->
+          <div class="security-principles-grid">
+            <div class="security-principle-item">
+              <h5 class="security-principle-title">Sumber Resmi</h5>
+              <p class="security-principle-desc">Unduh hanya melalui repositori resmi GitHub VISIONA.</p>
+            </div>
+            <div class="security-principle-item">
+              <h5 class="security-principle-title">Verifikasi SHA-256</h5>
+              <p class="security-principle-desc">Cocokkan hash berkas dengan nilai resmi yang tercantum di atas.</p>
+            </div>
+            <div class="security-principle-item">
+              <h5 class="security-principle-title">Perlindungan Perangkat</h5>
+              <p class="security-principle-desc">Jangan menonaktifkan antivirus, Windows Defender, atau SmartScreen untuk mengabaikan deteksi ancaman.</p>
             </div>
           </div>
         </div>
+        <script>
+          (function() {
+            var labels = document.querySelectorAll('.checksum-editorial-table .copy-label');
+            if (labels.length && 'MutationObserver' in window) {
+              var obs = new MutationObserver(function(mutations) {
+                mutations.forEach(function(m) {
+                  if (m.target.textContent === 'Salin SHA-256') {
+                    m.target.textContent = 'Salin Hash';
+                  }
+                });
+              });
+              labels.forEach(function(l) { obs.observe(l, { childList: true, characterData: true, subtree: true }); });
+            }
+          })();
+        </script>
 
         <p class="download-notice-editorial">
           Catatan: Halaman ini merupakan situs resmi informasi dan distribusi aplikasi desktop VISIONA. Sistem operasi Linux tidak didukung. Paket biner Windows mandiri (installer dan portabel) telah dikompilasi secara lokal dan siap didistribusikan melalui rilis resmi.
